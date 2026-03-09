@@ -1,0 +1,118 @@
+<!--Ejercicio para el tema de fechas.
+1) añadimos un control input type date y el evento change para imprimir una fecha en formato ISO
+2) almacenamos 24 fechas generadas al azar en un array. las fechas es cualquier dia del año 2019
+3) organizar las fechas en un display a 6 columnas
+4) resolver las operaciones con el array de objetos fechas
+- Menor a mayor
+- Mayor a menor
+- Diferencias en dias con la fecha siguiente
+- Mayor y menor diferencia entre dias
+- Fecha mas alta y baja
+- Dias entre la fecha mas alta y mas baja-->
+<script>
+    const idTabla = 1;
+    function generarEstructura() {
+        const controlISO = document.createElement("div");
+        controlISO.id = "controlISO";
+        document.appendChild(controlISO);
+
+        for (let i = 0; i < 4; i++) {
+            generarTabla();
+        }
+
+        const difValorDias = document.createElement("div");
+        difValorDias.id = "difValorDias";
+        document.appendChild(difValorDias);
+
+        const fechaBajaAlta = document.createElement("div");
+        fechaBajaAlta.id = "fechaBajaAlta";
+        document.appendChild(fechaBajaAlta);
+
+        const difDiasFechas = document.createElement("div");
+        difDiasFechas.id = "difDiasFechas";
+        document.appendChild(difDiasFechas);
+    }
+
+    function generarTabla() {
+        const divTabla = document.createElement("div");
+        divTabla.id = "div" + idTabla;
+        document.appendChild(divTabla);
+        const encabezado = document.createElement("p");
+        encabezado.id = "encabezado" + idTabla;
+        if (idTabla === 1) encabezado.innerHTML = `<h1><b> Listado 24 fechas a 6 columnas </b></h1>`;
+        else if (idTabla === 2) encabezado.innerHTML = `<h1><b> De menor a mayor </b></h1>`;
+        else if (idTabla === 3) encabezado.innerHTML = `<h1><b> De mayor a menor </b></h1>`;
+        else tabla.id = encabezado.innerHTML = `<h1><b> Diferencias en días con la siguiente fecha a dos caracteres sin decimales </b></h1>`;
+        document.divTabla.appendChild(encabezado);
+        const tabla = document.createElement("table");
+        tabla.id = idTabla;
+        tabla.innerHTML = `
+            <tr>
+                
+            </tr>
+        `
+        document.appendChild(tabla);
+        idTabla++;
+    }
+    function generarFechas() {
+        const dia = Math.floor(Math.random() * 31) + 1;
+        const mes = Math.random(Math.random() * 12) + 1;
+        const año = 2019;
+        fechasAleatorias = [];
+        for (let i = 0; i < 24; i++) {
+            fechasAleatorias.push(fechaAleatoria = new Date(2019, mes, dia));
+        }
+        return fechasAleatorias;
+    }
+    function ordenarFechasAsc(fechasAleatorias) {
+        return fechasAleatorias.sort((a, b) => a - b);
+    }
+    function ordenarFechasDesc(fechasAleatorias) {
+        return fechasAleatorias.sort((a, b) => b - a);
+    }
+    function numDiaDiferencias(fechasAleatorias) {
+        let diferencia;
+        let mayorDiferencia;
+        let menorDiferencia;
+        for (let i = 0; i < fechasAleatorias.length; i++) {
+            for (let j = 0; j < fechasAleatorias.length; j++) {
+                let dias_I = fechasAleatorias[i].getDay();
+                let dias_J = fechasAleatorias[j].getDay();
+                if (fechasAleatorias[i] !== fechasAleatorias[j]) {
+                    if (fechasAleatorias[i] > fechasAleatorias[j]) {
+                        diferencia = dias_I - dias_J;
+                    } else {
+                        diferencia = dias_J - dias_I;
+                    }
+                }
+                if (diferencia > mayorDiferencia) mayorDiferencia = diferencia;
+                if (diferencia < menorDiferencia) menorDiferencia = diferencia;
+            }
+        }
+        document.write(`MayorDif = ${mayorDiferencia} MenorDif = ${menorDiferencia}`);
+    }
+    function encontrarAltaBaja(fechasAleatorias) {
+        let operador;
+        let menor;
+        let mayor;
+        for (let i = 0; i < fechasAleatorias.length; i++) {
+            operador = fechasAleatorias[i];
+            if (operador > mayor) mayor = operador;
+            if (operador < menor) menor = operador;
+        }
+        document.write(`Mayor = ${mayor} Menor = ${menor}`);
+    }
+    function maximaDiferenciaDias(fechasAleatorias) {
+        let operador;
+        let menor;
+        let mayor;
+        for (let i = 0; i < fechasAleatorias.length; i++) {
+            operador = fechasAleatorias[i];
+            if (operador > mayor) mayor = operador;
+            if (operador < menor) menor = operador;
+        }
+        const difMilisegundos = mayor - menos;
+        const difDias = difMilisegundos / (1000 * 60 * 60 * 24);
+        document.write(`Días entre fechas = ${difDias}`);
+    }
+</script>

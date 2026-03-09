@@ -1,0 +1,50 @@
+https://www.arngren.net/
+
+*Orígenes:	
+El sitio fue creado por Geir Arne Arngren, un empresario noruego que vende una gran variedad de productos, principalmente relacionados con herramientas tecnológicas,
+vehículos (como coches voladores y scooters eléctricos), productos de telecomunicaciones, maquetas y  productos diversos como películas o herramientas para caza o trabajo en el campo.
+Arngren empezó con un enfoque pionero en la venta de productos por internet en la década de los 90, cuando el comercio electrónico aún estaba en sus primeras etapas.
+Lleva décadas en funcionamiento y sin recibir modificación alguna.
+
+*Errores de diseño:
+-Concepto difuso: Aunque está claro que la mayor cantidad de sus productos son vehículos, la variedad de productos y lo mal categorizados que están dificulta entender si quiera
+ que vende la página al acceder a ella.
+-Sobrecarga visual y cognitiva: La página está completamente saturada de imágenes de baja calidad, enlaces y bloques de texto. No hay espacios vacíos ni jerarquía visual, lo que hace que
+ la experiencia del usuario sea caótica. 
+-Navegación confusa: Todo el contenido está amontonado en una única página. La barra de navegación con las categorías de venta apenas llama la atención al marginarse en el lateral
+ izquierdo y llegando a ser invadida por otros hipervínculos o cajas con imágenes.
+-Falta de diseño responsivo: La resolución no se adapta a la pantalla o el tamaño de ventana, volviéndose un suplicio de navegar en pantalla de teléfono.
+-Falta de estructura: No hay una estructura clara o clasificación lógica de los productos. No hay grid, no hay estructura de filas y columnas,  no hay una lógica en el uso de los colores 
+ y los anuncios no parecen tener una lógica interna. Mayoritariamenet los precios se publican en rojo y el nombre de los artículos en negro, pero no es siempre así. 
+ Las dimensiones de los contenidos parece definirse por el tamaño de la imagen y los textos desbordan el marco del anuncio.
+ Las categorias de la barra de navegación tampoco siguen una pauta de color y hay cateorías fuera de la barra de navegación.
+ El método de pago es arcaico (compras por telefono, transferencia a un banco concreto noruego o enviándo formularios por correo postal). De forma casi imperceptible hay un aviso de que
+ los artículos expuestos pueden o tener desactualizado el precio o no seguir a la venta. Por último, los productos se venden exclusivamente en coronas noruegas.
+ Otra barrera de entrada que lo convierte en un portal de venta de nicho noruego.
+
+https://www.cita.es/
+
+Cooperación Internacional en Tecnologías Avanzadas (C.I.T.A.) SLU
+**Errores.
+-No se entiende quien presta el servicio: Que es cita? No hay forma de saberlo más que usando el buscador y deduciéndolo de los servicios o documentos que genera, pareciendo que se dedica
+ a periciales judiciales y consultoría técnica.
+-No se entiende que servicio se presta: Parece un buscador para pedir citas. Sin embargo es tanto la web de información de la empresa anteriormente nombrada como un portal de contacto.
+-Nulo atractivo visual: Tienen el logo colocado al revés, no hay una paleta de colorasignada a funciones y lo único que hay es un cuadro de búsqueda con sugerencias de uso y un
+ comentario en contra de la publicidad de google.
+-Falta de funcionalidad: No sirve para visibilizar la empresa, ni es cómodo buscar los servicio o información que ofrecen, algo chocante siendo en esencia una buscador la totalidad de la
+ página.
+-Parcialmente responsiva: El texto se adapta al ancho de pantalla, pero la imagen no.
+
+http://praxisstricker.de/
+
+*Origen: pertenece a Roland Stricker, un médico generalista en Hamm, Alemania. La clínica ofrece servicios de medicina general, homeopatía, y tratamientos naturales, con un enfoque en
+la medicina complementaria. Es una práctica orientada tanto a pacientes privados como a la atención general, con opciones de diagnósticos de laboratorio y terapias de medicina natural​
+
+*Errores de diseño: 
+-Mala gestión del espacio: El primer punto al que va la vista es un espacio vacío. La mayor parte de la página está vacía. No hay simetría izquierda-derecha ni en tamaño ni en color.
+-Poca visibilidad de lo que ofrece: Tiene una barra lateral que explica el catálogo de servicios, los valores del propietario, etc, pero no hay imágenes que permitan de forma
+rápida entender a lo que accedemos o que se ofrece
+-Opción de contacto oculta: Existe la opción de mandar un correo, pero solo se descubre al pulsar en una caja de correo animada en medio de la pantalla
+-Color excesivo: La elección de un verde plano para casi todo el espacio y en general, colores tan saturados cansan la vista y no son estéticos, a parte de no ser heurísticos de
+funcionalidad alguna
+-Parcialmente responsiva: solo la parte verde de la página se redimensiona, tapando parte de la barra de navegación

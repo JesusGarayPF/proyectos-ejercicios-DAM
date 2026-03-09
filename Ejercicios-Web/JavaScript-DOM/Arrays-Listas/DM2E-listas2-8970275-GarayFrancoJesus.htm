@@ -1,0 +1,74 @@
+<script>
+    const letras = '0123456789ABCDEF';
+    const letrasTexto = " qwertyuiopasdfghjklñzxcvbnm ";
+    const niveles = "ABC";
+
+    function colorAleatorio() {
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letras[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    function textoAleatorio() {
+        let texto = "";
+        for (let i = 0; i < 10; i++) {
+            texto += letrasTexto[Math.floor(Math.random() * letrasTexto.length)];
+        }
+        return texto;
+    }
+
+    function nivelAleatorio() {
+        return niveles[Math.floor(Math.random() * niveles.length)];
+    }
+
+    function versionAleatoria() {
+        return Math.floor(Math.random() * 10);
+    }
+
+    function crearListaObjetos() {
+        const lista = [];
+        for (let i = 0; i < 10; i++) {
+            const objeto = {
+                color: colorAleatorio(),
+                texto: textoAleatorio(),
+                nivel: nivelAleatorio(),
+                version: versionAleatoria()
+            };
+            lista.push(objeto);
+        }
+        return lista;
+    }
+
+    const lista = crearListaObjetos();
+
+    document.write(`<p>Primer Objeto: color=${lista[0].color}, texto=${lista[0].texto}, nivel=${lista[0].nivel}, versión=${lista[0].version}</p>`);
+
+    const listaAsc = [...lista].sort((a, b) => a.version - b.version);
+    listaAsc.forEach(objeto => {
+        document.write(`<p>Versión ascendente: color=${objeto.color}, texto=${objeto.texto}, nivel=${objeto.nivel}, versión=${objeto.version}</p>`);
+    });
+
+    const listaDesc = [...lista].sort((a, b) => b.version - a.version);
+    listaDesc.forEach(objeto => {
+        document.write(`<p>Versión descendente: color=${objeto.color}, texto=${objeto.texto}, nivel=${objeto.nivel}, versión=${objeto.version}</p>`);
+    });
+
+    const media = lista.reduce((sum, obj) => sum + obj.version, 0) / lista.length;
+    document.write(`<p>Media de versiones: ${media}</p>`);
+
+    const max = Math.max(...lista.map(obj => obj.version));
+    document.write(`<p>Máximo valor de versión: ${max}</p>`);
+
+    const min = Math.min(...lista.map(obj => obj.version));
+    document.write(`<p>Mínimo valor de versión: ${min}</p>`);
+
+    const suma = lista.reduce((sum, obj) => sum + obj.version, 0);
+    document.write(`<p>Suma de versiones: ${suma}</p>`);
+
+    const filtrado = lista.filter(obj => obj.version >= 0 && obj.version <= 5);
+    filtrado.forEach(objeto => {
+        document.write(`<p>Filtrado de 0 a 5: color=${objeto.color}, texto=${objeto.texto}, nivel=${objeto.nivel}, versión=${objeto.version}</p>`);
+    });
+</script>

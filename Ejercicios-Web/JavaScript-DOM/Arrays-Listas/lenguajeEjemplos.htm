@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>lenguajeEjemplos</title>
+
+<script type="text/javascript">
+// declaracion en head de javascript
+	
+// declaracion de funciones
+function unaFuncion(lista2){
+	lista2[0]=2;
+}
+
+function iniciar(){
+
+	// document.write BORRA el contenido previo del body
+	// document.write(1111);
+
+
+	// comrobar si los arrays pasan por referencia
+	var ele=document.createElement('p'); // crear nodo
+	document.body.appendChild(ele);	// añadir nodo al dom	
+	var lista1=[1]; // array de un elemento [0]=1
+	unaFuncion(lista1);
+	ele.innerHTML='<b>B)</b> los array pasan por referencia se modifica dentro de la funcion : '+lista1;
+
+	// imprimir en un nodo
+	var ele=document.createElement('p'); // crear nodo
+	document.body.appendChild(ele);	// añadir el nodo al dom	
+	var a=['a','b',4]; 
+	a['ultimo']=99;
+	ele.innerHTML='<b>C)</b> imprimir un array con innerHTML (solo indices numericos) : '+a; 
+
+	// que hacemos con la precision de los numeros ?
+	var ele2=document.createElement('p'); // crear nodo
+	document.body.appendChild(ele2);	  // añadir nodo al dom	
+	var x=0.2;
+	var y=0.1;
+	var z=x+y;
+	var w=(x+y).toFixed(10);
+	// al multiplicar por 10 quitamos el error de precision
+	var t2=x+' + '+y+' = '+z;
+	var t3=(x*10000+y*10000)/10000;
+
+	var d1= (-1 % 8); // = -1 (es 7)
+	var d3= ((-1 % 8 ) + 8 ) % 8
+
+	ele2.innerHTML='<b>D)</b> ejemplo de precisión de un numero<br/>suma de dos float : '+t2+'<br/>1) usando toFixed para eliminar decimales = '+w+'<br/>2) multiplicando y dividiendo por multiplos de 10 = '+t3+'<br/>'+'3) módulo de números negativos da '+d1+' es '+d3+', usar [((-1 % 8 ) + 8 ) % 8 ] en vez de [-1 % 8]<br/><br/>';
+
+	ele2.innerHTML+='<b>E)</b> haz click para ver el orden de los eventos: body,document,window<br/>';
+// ver: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Remainder
+// ver: https://explainedy.com/modulo-funciona-con-numeros-negativos/
+
+
+	/*
+	En una jerarquia de objetos con el mismo evento vemos a quien se atiende antes
+	src: https://www.w3schools.com/js/js_window.asp
+	*/
+
+	document.body.onclick = function(){alert('click al body')}; // objeto.evento=manejador
+	document.onclick = function(){alert('click a document')};
+	window.onclick = function(){alert('click window')};
+
+}
+
+
+// objeto.evento=manejador como declaracion semantica
+// evento de inicio despues de cargar la pagina
+window.onload=iniciar;
+
+
+</script>
+</head>
+ 
+
+<body>
+<script type="text/javascript">
+
+// los array son object, los array pueden mezclar indices y nombres
+document.write('ALGUNOS EJEMPLOS JS<br/><br/><b>A) arrays</b></br>');
+var arr = [3,5,7]; // es un objeto
+document.write('declaracion del array : var arr = [3,5,7];');
+var f=arr instanceof Array; // preguntar por el tipo de una variable
+document.write('<br/>-es un array ? '+f+'<br/>');
+// añadimos elementos al array propiedad=valor
+document.write('añadimos elementos y un hueco en [3]:<br/>');
+arr.foo = "hello"; // add como objeto con .
+arr['pp2']='3404'; // add indice texto con []
+arr[4]=4; // add indice numerico con []
+document.write('-arr[foo]='+arr['foo']+'; <br/>');
+document.write('-arr[pp2]='+arr['pp2']+';<br/>');
+document.write('-arr[3]='+arr[3]+'; <br/>');
+document.write('-arr[4]='+arr[4]);
+document.write('<br/>js no soporta arrays asociativas al añadir foo la convierte en object');
+document.write('<br/>array numerico for, foreach. object texto for in of');
+document.write('<br/>length(siguiente al numérico alto): ',arr.length);
+// abrir consola
+console.log(arr,'!! solo imprime valores en indices numéricos');
+
+// como recorrer un array indices numericos o mixtos
+document.write('<br/>print del array con document.write imprime solo numericos : ',arr);
+document.write('<br/>leemos todos los indices del array con for in : ');
+for (let i in arr) {
+   document.write(i,' '); // elmento [3] no tiene indice
+}
+document.write('<br/>leemos los valores con for..of del array : ');
+for (let i of arr) {
+   document.write(i,' '); 
+}
+document.write('<br/>lectura de indices for..in y sus valores : ');
+for (let i in arr) {
+   document.write(i,'=',arr[i],';'); // [3] no tiene indice, tiene texto
+}
+
+var txt="";
+arr.forEach(myFunction);
+document.write('<br/>con forEach solo numéricos ',txt);
+
+
+const m1=[1,2,3];
+document.write('<br/>const array ',m1);
+m1.push(4);
+document.write('<br/>const despues de push ',m1);
+m1.pop();
+document.write('<br/>const despues de push ',m1);
+m1[10,11,12];
+document.write('<br/>const despues de push ',m1); // no lo hace
+
+document.write('<br/>fin del body');
+
+function myFunction(value, index, array) {
+  txt += index +'='+ value + " , ";
+}
+
+// uso de throw abrir consola para ver la excepcion
+// pero el body cargo y ejecuto el js
+/*
+1. carga html del body
+2. dispara el evento window.onload=iniciar;
+3. ejecuta el js de iniciar
+4. ejecuta el js del body
+5. sale por la excepcion
+*/
+throw ":))) soy una excepcion y termino el programa";
+
+</script>	
+
+</body>
+</html>

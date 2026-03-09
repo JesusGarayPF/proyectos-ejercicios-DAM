@@ -1,0 +1,130 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        function calcularValores(x) {
+            let cosX = Math.cos(x);
+            let sinX = Math.sin(x);
+            return {
+                x: x.toFixed(2),
+                cos: cosX.toFixed(2),
+                sin: sinX.toFixed(2),
+                sinFull: sinX.toString(),
+                x_14: x.toFixed(14),
+                x_full: x.toString()
+            };
+        }
+
+        function generarCSV() {
+            let csv = "x#cos(x)#sin(x)#sin(x)#14 decimales#x con decimales\n";
+            for (let x = 0.0; x <= 12.0; x += 0.6) {
+                let valores = calcularValores(x);
+                csv += `${valores.x}#${valores.cos}#${valores.sin}#${valores.sinFull}#${valores.x_14}#${valores.x_full}\n`;
+            }
+            return csv;
+        }
+
+        function generarTabla() {
+            let tabla = document.createElement('table');
+            tabla.className = "tabla-estilo";
+
+            let encabezado = document.createElement('thead');
+            let encabezadoFila = document.createElement('tr');
+            encabezadoFila.innerHTML = `
+                <th>x</th>
+                <th>cos(x)</th>
+                <th>sin(x)</th>
+                <th>sin(x) - todos los decimales</th>
+                <th>x - 14 decimales</th>
+                <th>x - todos los decimales</th>
+            `;
+            encabezado.appendChild(encabezadoFila);
+            tabla.appendChild(encabezado);
+            let cuerpoTabla = document.createElement('tbody');
+            for (let x = 0.0; x <= 12.0; x += 0.6) {
+                let valores = calcularValores(x);
+                let fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${valores.x}</td>
+                    <td>${valores.cos}</td>
+                    <td>${valores.sin}</td>
+                    <td>${valores.sinFull}</td>
+                    <td>${valores.x_14}</td>
+                    <td>${valores.x_full}</td>
+                `;
+                fila.className = (Math.floor(x / 0.6) % 2 === 0) ? 'fila-par' : 'fila-impar';
+                cuerpoTabla.appendChild(fila);
+            }
+
+            tabla.appendChild(cuerpoTabla);
+            document.body.appendChild(tabla);
+        }
+
+        function crearEncabezado(texto) {
+            let encabezado = document.createElement('h2');
+            encabezado.textContent = texto;
+            document.body.appendChild(encabezado);
+        }
+
+        function mostrarCSV() {
+            let pre = document.createElement('pre');
+            pre.textContent = generarCSV();
+            document.body.appendChild(pre);
+        }
+
+        function agregarEstilos() {
+            let style = document.createElement('style');
+            style.textContent = `
+                .tabla-estilo {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 20px;
+                }
+                .tabla-estilo th {
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 8px;
+                }
+                .tabla-estilo td {
+                    padding: 8px;
+                    text-align: center;
+                    border: 1px solid #ddd;
+                }
+                .fila-par {
+                    background-color: #f2f2f2;
+                }
+                .fila-impar {
+                    background-color: #ffffff;
+                }
+                .canvas{
+                    border: 2px;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        function pintarFuncSeno(){
+            const canvas = document.createElement("canvas");
+            canvas.width = 400;
+            canvas.height = 200;
+            document.body.appendChild(canvas);
+            const ctx = canvas.getContext("2d");
+            //Sistemas de coordenadas
+            ctx.translate(0,canvas.height/2) //centro vertical
+            ctx.scale(1,-1); //Invertir eje y
+            //Pintar ejes
+            ctx.beginPath();
+            ctx.moveTo(0,0);
+            ctx.lineTo(canvas.width, 0); //Eje X
+            ctx.moveTo(0,-canvas.height/2);
+            ctx.lineTo(0, canvas.height/)
+            for(let x = 0; x < canvas.width; x++){
+                const y = Math.sin(x *0.01)*100) // *0.01 convierte a radianes y *100 hace que el valor de math ocupe más canvas
+            }
+        }
+
+        agregarEstilos();
+        crearEncabezado("1) Texto CSV:");
+        mostrarCSV();
+        crearEncabezado("2) Tabla de valores en tabla:");
+        generarTabla();
+    });
+</script>

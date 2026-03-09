@@ -1,0 +1,17 @@
+<resources>
+    <!-- Vertical -->
+    <dimen name="carta_nivel_1_ancho">190dp</dimen>
+    <dimen name="carta_nivel_1_alto">360dp</dimen>
+    <dimen name="carta_nivel_2_ancho">126dp</dimen>
+    <dimen name="carta_nivel_2_alto">340dp</dimen>
+    <dimen name="carta_nivel_3_ancho">95dp</dimen>
+    <dimen name="carta_nivel_3_alto">200dp</dimen>
+
+    <!-- Horizontal -->
+    <dimen name="carta_nivel_1_landscape_ancho">375dp</dimen>
+    <dimen name="carta_nivel_1_landscape_alto">150dp</dimen>
+    <dimen name="carta_nivel_2_landscape_ancho">260dp</dimen>
+    <dimen name="carta_nivel_2_landscape_alto">150dp</dimen>
+    <dimen name="carta_nivel_3_landscape_ancho">190dp</dimen>
+    <dimen name="carta_nivel_3_landscape_alto">102dp</dimen>
+</resources>

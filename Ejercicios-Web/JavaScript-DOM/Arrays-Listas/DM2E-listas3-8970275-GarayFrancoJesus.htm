@@ -1,0 +1,99 @@
+<script>
+    window.onload = function () {
+        function numeroAleatorioEnRango(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function colorAleatorioRGB() {
+            return `rgb(${numeroAleatorioEnRango(0, 255)}, ${numeroAleatorioEnRango(0, 255)}, ${numeroAleatorioEnRango(0, 255)})`;
+        }
+
+        function letraAleatoria() {
+            const letras = 'ABCDEFGHIJKL';
+            return letras.charAt(numeroAleatorioEnRango(0, letras.length - 1));
+        }
+
+        let objetos = [];
+        for (let i = 0; i < 10; i++) {
+            objetos.push({
+                alto: numeroAleatorioEnRango(50, 90),
+                ancho: numeroAleatorioEnRango(40, 60),
+                color: colorAleatorioRGB(),
+                texto: letraAleatoria(),
+                nivel: ['a', 'b', 'c'][numeroAleatorioEnRango(0, 2)],
+                version: numeroAleatorioEnRango(0, 9)
+            });
+        }
+
+        let contenedor = document.createElement('div');
+        contenedor.style.display = 'flex';
+        contenedor.style.flexWrap = 'wrap';
+        document.body.appendChild(contenedor);
+
+        function crearDivObjeto(objeto, indice) {
+            let div = document.createElement('div');
+            div.style.width = objeto.ancho + 'px';
+            div.style.height = objeto.alto + 'px';
+            div.style.backgroundColor = objeto.color;
+            div.style.margin = '10px';
+            div.style.display = 'flex';
+            div.style.justifyContent = 'center';
+            div.style.alignItems = 'center';
+            div.style.border = '1px solid black';
+            div.style.fontFamily = 'Arial';
+            div.innerText = `${indice}: ${objeto.texto} (${objeto.nivel}) v${objeto.version}`;
+            return div;
+        }
+
+        function mostrarObjetos(listaObjetos) {
+            contenedor.innerHTML = '';
+            listaObjetos.forEach((objeto, index) => {
+                contenedor.appendChild(crearDivObjeto(objeto, index));
+            });
+        }
+
+        mostrarObjetos(objetos);
+
+        function ordenarPorVersionAscendente() {
+            return [...objetos].sort((a, b) => a.version - b.version);
+        }
+
+        function ordenarPorVersionDescendente() {
+            return [...objetos].sort((a, b) => b.version - a.version);
+        }
+
+        function filtrarVersiones05() {
+            return objetos.filter(obj => obj.version >= 0 && obj.version <= 5);
+        }
+
+        function calcularSumaVersiones() {
+            return objetos.reduce((suma, obj) => suma + obj.version, 0);
+        }
+
+        function calcularMediaVersiones() {
+            return calcularSumaVersiones() / objetos.length;
+        }
+
+        function obtenerMaximoVersion() {
+            return Math.max(...objetos.map(obj => obj.version));
+        }
+
+        function obtenerMinimoVersion() {
+            return Math.min(...objetos.map(obj => obj.version));
+        }
+
+        console.log("Ordenado por versión ascendente:");
+        mostrarObjetos(ordenarPorVersionAscendente());
+
+        console.log("Ordenado por versión descendente:");
+        mostrarObjetos(ordenarPorVersionDescendente());
+
+        console.log("Filtrado por versiones entre 0 y 5:");
+        mostrarObjetos(filtrarVersiones05());
+
+        console.log("Suma de las versiones:", calcularSumaVersiones());
+        console.log("Media de las versiones:", calcularMediaVersiones());
+        console.log("Máxima versión:", obtenerMaximoVersion());
+        console.log("Mínima versión:", obtenerMinimoVersion());
+    };
+</script>

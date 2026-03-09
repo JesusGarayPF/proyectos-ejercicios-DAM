@@ -1,0 +1,17 @@
+1- Nombre y NIA
+Jesús Garay Franco - 8970275
+
+2- Que hiciste el año pasado ? estudios, trabajo, nada ..
+Cursé primero de DAM
+
+3- Eres repetidor ? donde cursaste al año pasado, que te queda pendiente
+No me queda nada pendiente. Lo cursé en este mismo centro
+
+4- Espectativas con el módulo
+Espero aprender a crear interfaces para cuaquier tipo de aplicación de escritorio
+
+5- Espectativas con tu futuro laboral
+Principalmente espero estabilidad, pero todavía no tengo claro en que ámbito me gustaría trabajar. Me atrae el back-end de las aplicaciones web, el sector de los videojuegos y las aplicaciones y webs de compra
+
+6- Dificultades esperadas para cursar este módulo
+Al ser algo nuevo y que no hicimos el año pasado, espero cierta dificultad para adaptarme a crear interfaces, especialmente al control de los inputs

@@ -1,0 +1,67 @@
+- Redacta y numera 10 REGLAS lo mas concretas posibles de usabilidad.
+
+1.Debe ser lo más sencilla posible de usar
+2.Lo más usado debe ser lo más visible
+3.Los colores deben ser idealmente complementarios y estar asociados a funcionalidad
+4.El usuario debe recibir confirmación de alguna forma de sus acciones, alguna retroalimentación
+5.La página debe ser técnicamente funcional (No usar tecnologías descontinuadas, poder cargar en un tiempo razonable para el usuario etc, ser compatible con los navegadores más usados,etc)
+6.Debe tener una estructura fácilmente comprensible y consistente en todo el sitio
+7.El contenido debe ser el necesario. Un exceso de contenido genera fatiga y su falta frustración.
+8.Debe adaptarse a distintos dispositivos. Ser responsive
+9.Debe ser segura de navegar
+10.Los elementos con funciones distintas deben ser evidente y visualmente distintos. Botones, enlaces, barras de navegación, buscador, etc, no pueden parecer lo mismo. 
+
+
+- Navega y selecciona 5 WEBS que tengan mala o fallos grandes de usabilidad.
+- Para cada una de las web indica 5 reglas fallidas de usabilidad, explica brevemente.
+- Ordena de mejor a peor navegabilidad estas 5 webs.
+- Cual es la web con peor usabilidad de estas 5?
+
+1. Craigslist
+Reglas fallidas:
+Diseño visual obsoleto: El sitio tiene un diseño obsoleto y poco visual, lo que lo hace aburrido y difícil de usar.
+Facilidad de navegación: La navegación es limitada, con listas interminables de enlaces que sobrecargan a los usuarios.
+Estructura lógica: La falta de organización y de categorías claras complica la búsqueda de información.
+Uso de botones de acción: No hay indicaciones claras sobre cómo proceder, lo que genera confusión.
+Compatibilidad móvil: Aunque funciona en móviles, el diseño no está optimizado para ellos.
+
+2. Paper Source
+Reglas fallidas:
+Sobrecarga de información: La página principal presenta demasiados elementos, sobrecargando al visitante.
+Diferenciación de acciones: Los botones de acción se confunden con el texto común.
+Diseño visual: La mezcla de diferentes colores y fuentes genera confusión.
+Optimización de contenido: La falta de jerarquía en el contenido hace que sea difícil encontrar la información relevante.
+Estructura lógica: La disposición de los elementos no sigue un flujo claro.
+
+3. Blinkee
+Reglas fallidas:
+Diseño visual: La elección de colores y animaciones abruma al usuario, generando una mala experiencia.
+Jerarquía visual: Los productos no están bien organizados, lo que dificulta la navegación.
+Elementos de acciones poco claros: Los botones están apilados, lo que los hace difíciles de usar.
+Sobrecarga de animaciones: El uso excesivo de animaciones distrae a los usuarios.
+Estructura desorganizada: El sitio carece de una organización clara de categorías y productos.
+
+4. Drudge Report
+Reglas fallidas:
+Diseño visual anticuado: Parece una página de enlaces y carece de atractivo visual.
+Facilidad de navegación: El exceso de enlaces en la página principal abruma a los visitantes.
+Optimización del contenido: No hay imágenes o multimedia que dividan el contenido, lo que hace que todo parezca texto denso.
+Claridad de propósito: El sitio no comunica claramente su objetivo principal.
+Interacción limitada: No fomenta la interacción del usuario, lo que da lugar a una experiencia estática y aburrida.
+
+5. Shambles.net
+Reglas fallidas:
+Publicidad excesiva: La página principal está saturada de anuncios que distraen y confunden.
+Diseño anticuado: La apariencia es de los años 90, lo que desalienta a los usuarios modernos.
+Navegación confusa: No hay una estructura clara o un menú de navegación lógico.
+Optimización móvil deficiente: Aunque tiene un código QR para la versión móvil, no está bien implementada.
+Estructura desorganizada: El contenido está disperso y es difícil encontrar los recursos educativos prometidos.
+
+ORDEN DE NAVEGABILIDAD DE MEJOR A PEOR:
+Craigslist
+Paper Source
+Blinkee
+Drudge Report
+Shambles.net
+
+La web con peor usabilidad es Shambles.net. Su diseño obsoleto, saturación de anuncios y navegación caótica hacen que sea especialmente difícil de usar.

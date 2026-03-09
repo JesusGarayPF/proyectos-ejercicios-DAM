@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de 2020</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .calendar {
+            width: 100%;
+            max-width: 900px;
+        }
+        .month-row {
+            clear: both;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .month-name {
+            width: 100px;
+            text-align: right;
+            font-weight: bold;
+            font-size: 1em;
+            margin-right: 10px;
+            float: left;
+        }
+        .day {
+            width: 40px;
+            height: 40px;
+            float: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 1px;
+            background-color: #FFFF99; /* Fondo amarillo claro para los días fuera del mes */
+        }
+        .current-month {
+            background-color: #FFD700; /* Fondo amarillo fuerte para los días dentro del mes */
+        }
+        .saturday, .sunday {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="calendar" id="calendar"></div>
+
+    <script>
+        const monthNames = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+        const daysInMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        const weekdays = ["L", "M", "X", "J", "V", "S", "D"];
+        
+        function generateCalendar(year) {
+            const calendarDiv = document.getElementById("calendar");
+
+            monthNames.forEach((month, monthIndex) => {
+                const monthRow = document.createElement("div");
+                monthRow.classList.add("month-row");
+
+                const monthNameDiv = document.createElement("div");
+                monthNameDiv.classList.add("month-name");
+                monthNameDiv.textContent = month;
+                monthRow.appendChild(monthNameDiv);
+
+                // Obtener el primer y último día del mes
+                const firstDayOfMonth = new Date(year, monthIndex, 1).getDay();
+                const lastDayOfMonth = new Date(year, monthIndex, daysInMonth[monthIndex]).getDay();
+                
+                // Calcular el día de la semana en que empieza y termina el mes (Lunes=0)
+                const startOffset = (firstDayOfMonth + 6) % 7;
+                const endOffset = 6 - ((lastDayOfMonth + 6) % 7);
+
+                // Rellenar días del mes anterior para alinear el inicio en lunes
+                const prevMonthDays = monthIndex === 0 ? daysInMonth[11] : daysInMonth[monthIndex - 1];
+                for (let i = startOffset; i > 0; i--) {
+                    const dayDiv = document.createElement("div");
+                    dayDiv.classList.add("day");
+                    const dayOfWeek = (7 - i) % 7;
+                    dayDiv.textContent = `${prevMonthDays - i + 1} ${weekdays[dayOfWeek]}`;
+                    if (dayOfWeek === 5) dayDiv.classList.add("saturday");
+                    if (dayOfWeek === 6) dayDiv.classList.add("sunday");
+                    monthRow.appendChild(dayDiv);
+                }
+
+                // Agregar los días del mes actual
+                for (let day = 1; day <= daysInMonth[monthIndex]; day++) {
+                    const dayDiv = document.createElement("div");
+                    dayDiv.classList.add("day", "current-month");
+                    const dayOfWeek = (startOffset + day - 1) % 7;
+                    dayDiv.textContent = `${day} ${weekdays[dayOfWeek]}`;
+                    if (dayOfWeek === 5) dayDiv.classList.add("saturday");
+                    if (dayOfWeek === 6) dayDiv.classList.add("sunday");
+                    monthRow.appendChild(dayDiv);
+                }
+
+                // Rellenar días del mes siguiente para completar la fila hasta alcanzar 49 días
+                for (let i = 1; monthRow.children.length < 50; i++) {
+                    const dayDiv = document.createElement("div");
+                    dayDiv.classList.add("day");
+                    const dayOfWeek = (startOffset + daysInMonth[monthIndex] + i - 1) % 7;
+                    dayDiv.textContent = `${i} ${weekdays[dayOfWeek]}`;
+                    if (dayOfWeek === 5) dayDiv.classList.add("saturday");
+                    if (dayOfWeek === 6) dayDiv.classList.add("sunday");
+                    monthRow.appendChild(dayDiv);
+                }
+
+                calendarDiv.appendChild(monthRow);
+            });
+        }
+
+        generateCalendar(2020); // Generar el calendario para el año 2020
+    </script>
+</body>
+</html>

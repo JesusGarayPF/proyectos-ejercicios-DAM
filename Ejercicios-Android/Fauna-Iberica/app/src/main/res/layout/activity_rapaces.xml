@@ -1,0 +1,238 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTituloRapaces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:text="Rapaces y Carroñeras"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:padding="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Águila Imperial -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgAguilaImperial"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/rbaguilaimperial" />
+
+                    <RadioButton
+                        android:id="@+id/rbAguilaImperial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvAguilaImperial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:text="Águila Imperial"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Buho Real -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgBuhoReal"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/rbbuhoreal" />
+
+                    <RadioButton
+                        android:id="@+id/rbBuhoReal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvBuhoReal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:text="Buho Real"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Halcón Peregrino -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgHalconPeregrino"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/rbhalconperegrino" />
+
+                    <RadioButton
+                        android:id="@+id/rbHalconPeregrino"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvHalconPeregrino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:text="Halcón Peregrino"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Cernícalo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgCernicalo"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/rbcernicalo" />
+
+                    <RadioButton
+                        android:id="@+id/rbCernicalo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvCernicalo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:text="Cernícalo"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Quebrantahuesos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgQuebrantahuesos"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/rbquebrantahuesos" />
+
+                    <RadioButton
+                        android:id="@+id/rbQuebrantahuesos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvQuebrantahuesos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:text="Quebrantahuesos"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Buitre Leonado -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgBuitreLeonado"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/rbbuitreleonado" />
+
+                    <RadioButton
+                        android:id="@+id/rbBuitreLeonado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvBuitreLeonado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:text="Buitre Leonado"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,201 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Dónde se encuentra la región de...?"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/regionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp"
+        android:visibility="gone" /> <!-- Oculto -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <RadioGroup
+            android:id="@+id/regionRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radioButtonAndalucia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Andalucía"
+                android:drawableStart="@drawable/andalucia16"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAragon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Aragón"
+                android:drawableStart="@drawable/aragon06"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAsturias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Asturias"
+                android:drawableStart="@drawable/asturias02"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonCantabria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Cantabria"
+                android:drawableStart="@drawable/cantabria03"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonCastillaLeon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Castilla y León"
+                android:drawableStart="@drawable/castillaleon08"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonCastillaMancha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Castilla-La Mancha"
+                android:drawableStart="@drawable/castillamancha11"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonCatalunia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Cataluña"
+                android:drawableStart="@drawable/catalunia07"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonValencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Comunidad Valenciana"
+                android:drawableStart="@drawable/valencia13"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonExtremadura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Extremadura"
+                android:drawableStart="@drawable/extremadura12"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonGalicia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Galicia"
+                android:drawableStart="@drawable/galicia01"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonMadrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Madrid"
+                android:drawableStart="@drawable/madrid10"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonMurcia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Murcia"
+                android:drawableStart="@drawable/murcia15"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonNavarra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Navarra"
+                android:drawableStart="@drawable/navarra05"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonPaisVasco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="País Vasco"
+                android:drawableStart="@drawable/paisvasco04"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonRioja"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="La Rioja"
+                android:drawableStart="@drawable/rioja09"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonBaleares"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Islas Baleares"
+                android:drawableStart="@drawable/baleres14"
+                android:drawablePadding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonCanarias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:tag="Islas Canarias"
+                android:drawableStart="@drawable/canarias19"
+                android:drawablePadding="8dp" />
+
+        </RadioGroup>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/checkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comprobar"
+        android:layout_gravity="center_horizontal"
+        android:padding="8dp" />
+</LinearLayout>

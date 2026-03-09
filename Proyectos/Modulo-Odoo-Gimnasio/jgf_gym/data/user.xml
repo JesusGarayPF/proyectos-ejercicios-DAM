@@ -1,0 +1,14 @@
+<odoo>
+    <data noupdate="1">
+        <record id="user_acceso_completo" model="res.users">
+            <field name="name">Administrador Gimnasio</field>
+            <field name="login">admin_gym</field>
+            <field name="groups_id" eval="[(4, ref('jgf_gym_full_access'))]"/>
+        </record>
+        <record id="user_acceso_restringido" model="res.users">
+            <field name="name">Empleado Gimnasio</field>
+            <field name="login">empleado_gym</field>
+            <field name="groups_id" eval="[(4, ref('jgf_gym_restricted_access'))]"/>
+        </record>
+    </data>
+</odoo>

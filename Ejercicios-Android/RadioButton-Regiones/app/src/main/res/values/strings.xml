@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Tragaperras</string>
+
+    <plurals name="pulsaciones">
+        <item quantity="one">%d pulsación</item>
+        <item quantity="other">%d pulsaciones</item>
+    </plurals>
+
+    <plurals name="puntos">
+        <item quantity="one">%d punto</item>
+        <item quantity="other">%d puntos</item>
+    </plurals>
+</resources>

@@ -1,0 +1,43 @@
+Refrigeración
+	refrigeración liquida
+	ventiladores
+	pasta térmica
+	disipadores
+Componentes
+	Caja
+	Fuente de alimentación
+	Gráfica
+	Placa base
+	Disipadores
+	Tarjeta de sonido
+	Tarjeta de red
+	SO (Sistema Operativo)
+	CPU
+	RAM
+Almacenamiento
+	SSD
+	HDD
+	M.2
+	Servidor NAS
+Periféricos
+	Altavoces
+	Monitores
+	Monitor 4K
+	Teclados
+	Teclado inalámbrico
+	Ratón
+	Ratón inalámbrico
+	Impresoras
+	Micrófono
+	Sistema de sonido 5.1
+	Cascos
+	Cargadores
+	Alfombrilla
+Cables
+	HDMI
+	USB
+	Adaptadores
+	Adaptador Bluetooth
+	Cargadores
+Portátiles
+Gaming

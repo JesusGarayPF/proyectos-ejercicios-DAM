@@ -1,0 +1,104 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/etIdModificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID del Registro a Modificar"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btnBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Buscar Registro" />
+
+        <EditText
+            android:id="@+id/etIdActual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID Actual"
+            android:enabled="false" />
+
+        <EditText
+            android:id="@+id/etNombreActual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre Actual"
+            android:enabled="false" />
+
+        <EditText
+            android:id="@+id/etDescripcionActual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descripción Actual"
+            android:enabled="false" />
+
+        <EditText
+            android:id="@+id/etFechaActual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fecha Actual"
+            android:enabled="false" />
+
+        <EditText
+            android:id="@+id/etEmailActual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email Actual"
+            android:enabled="false" />
+
+        <EditText
+            android:id="@+id/etTelefonoActual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Teléfono Actual"
+            android:enabled="false" />
+
+        <EditText
+            android:id="@+id/etNombreModificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nuevo Nombre" />
+
+        <EditText
+            android:id="@+id/etDescripcionModificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nueva Descripción" />
+
+        <EditText
+            android:id="@+id/etFechaModificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nueva Fecha" />
+
+        <EditText
+            android:id="@+id/etEmailModificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nuevo Email" />
+
+        <EditText
+            android:id="@+id/etTelefonoModificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nuevo Teléfono" />
+
+        <Button
+            android:id="@+id/btnActualizar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Actualizar Datos" />
+    </LinearLayout>
+</ScrollView>

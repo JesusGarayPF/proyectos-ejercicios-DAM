@@ -1,0 +1,36 @@
+fichero: DM2E-GBC3-nia-ApellidosNombre.htm
+tiempo: 40m (ACNE 50m)
+fecha: 
+
+Enunciado:
+El alumno programa solo en JS en un único fichero HTM,
+dado el video y la capturas.
+
+Apartados:
+01- Cada caja sigue el boxmodel según boxmodel1.png
+02- Aparecen todas las cajas alineadas correctamente al cargar la página.
+03- Aparecen las letras y números correctamente y centrados.
+04- Click en cualquier caja (A-J,0-9,-HOLAKTAL-) aparece una letra nueva del texto "-HOLAKTAL-" hasta completarlo.
+05- Nuevo click con el texto completo en cualquier caja aparece todo 0s.
+06- Nuevos clicks en cualquier caja aparece sucesivamente 1, 2, 3.
+07- Nuevo click aparece correctamente contenido 0000000..0011100
+08- Los estilos de 0000000..0011100 estan correctamente según boxmodel2.png
+09- Nuevo click en cualquier número apacece "FIN".
+
+Instrucciones:
+-Leer detenidamente este enunciado, una vez comenzada la prueba NO hay preguntas.
+-El examen se evalua en firefox (zoom al 100%) + linux en los equipos de clase, donde están instalados los reproductores de imagen y video.
+-Puedes usar internet y el material de clase.
+-Solo apartados completos puntuan, incompletos es un cero.
+-Entregas fuera de tiempo no puntuan. Se corrige la ultima entrega en tiempo.
+-Entregar cada 10m desde minuto cero para tener un histórico.
+-El uso de IDEs no esta permitido, solo editor de código.
+
+Criterios (la prueba es un cero si):
+A-Nombre del fichero esta mal.
+B-No envia ningún fichero.
+C-Envia algo diferente a un solo fichero htm.
+D-No hay histórico.
+E-El uso de IDEs (react,node,angular,...) 
+F-Cualquier código copiado entre compañeros es un cero para ambos.
+G-El body debe estar vacio, solo JS.

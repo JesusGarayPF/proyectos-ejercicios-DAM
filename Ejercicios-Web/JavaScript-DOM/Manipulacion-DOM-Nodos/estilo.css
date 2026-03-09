@@ -1,0 +1,77 @@
+/* Contenedor principal */
+#d1 {
+    font-family: monospace;
+    white-space: pre;
+    line-height: 1.5;
+    border: none;
+    position: relative;
+}
+
+/* Estilo para el encabezado, aplicado directamente a través de JavaScript */
+.encabezado {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    white-space: pre; /* Preserva el salto de línea */
+}
+
+/* General para cada nodo */
+div {
+    display: inline-block;
+    border: 1px solid #C0C0C0;
+    margin: 2px 0;
+    padding: 2px 5px;
+}
+
+/* Estilos para los elementos */
+.elemento {
+    color: #FF0000;
+    font-weight: bold;
+}
+
+/* Estilos para los atributos de los elementos */
+.atributo {
+    color: #006600;
+    background-color: #E0FFE0;
+    border: 1px solid #A3FFA3;
+    padding: 1px 3px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* Estilos para el contenido de texto */
+.texto {
+    color: #0000FF;
+    font-style: italic;
+    display: inline;
+}
+
+/* Estilos para los nodos de texto vacíos */
+.vacio {
+    color: #AAAAAA;
+    font-style: italic;
+    background-color: #F0F0F0;
+    padding: 1px 3px;
+    display: inline-block;
+}
+
+/* Estilo para comentarios en azul (alineados y en una sola línea) */
+.comentario {
+    color: #0000FF; /* Azul para comentarios */
+    font-style: italic;
+    background-color: #F9F9F9;
+    border: 1px solid #D3D3D3;
+    padding: 1px 3px;
+    display: inline-block; /* Mantener el tamaño ajustado al contenido */
+    margin-left: 10px;
+    white-space: nowrap; /* Fuerza que se mantenga en una sola línea */
+    overflow: hidden; /* Evita que se dividan en varias líneas */
+    text-overflow: ellipsis; /* Opcional: agrega puntos suspensivos si el contenido es muy largo */
+}
+
+/* Estilo de indentación para cada nivel de nodo */
+.nivel-1 { margin-left: 20px; }
+.nivel-2 { margin-left: 40px; }
+.nivel-3 { margin-left: 60px; }
+.nivel-4 { margin-left: 80px; }
+.nivel-5 { margin-left: 100px; }

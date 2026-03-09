@@ -1,0 +1,44 @@
+<script>
+    const numeros = Array.from({ length: 10 }, () => Math.floor(Math.random() * 1001));
+
+    function imprimirLista(lista) {
+        document.write("Lista original: " + lista.join(", ") + "<br>");
+    }
+
+    function ordenarAscendente(lista) {
+        return [...lista].sort((a, b) => a - b);
+    }
+
+    function ordenarDescendente(lista) {
+        return [...lista].sort((a, b) => b - a);
+    }
+
+    function calcularMedia(lista) {
+        return lista.reduce((sum, num) => sum + num, 0) / lista.length;
+    }
+
+    function calcularMaximo(lista) {
+        return Math.max(...lista);
+    }
+
+    function calcularMinimo(lista) {
+        return Math.min(...lista);
+    }
+
+    function calcularSuma(lista) {
+        return lista.reduce((sum, num) => sum + num, 0);
+    }
+
+    function filtrarNumeros0a100(lista) {
+        return lista.filter(num => num >= 0 && num <= 100);
+    }
+
+    imprimirLista(numeros);
+    document.write("Orden ascendente: " + ordenarAscendente(numeros).join(", ") + "<br>");
+    document.write("Orden descendente: " + ordenarDescendente(numeros).join(", ") + "<br>");
+    document.write("Media: " + calcularMedia(numeros) + "<br>");
+    document.write("Máximo: " + calcularMaximo(numeros) + "<br>");
+    document.write("Mínimo: " + calcularMinimo(numeros) + "<br>");
+    document.write("Suma: " + calcularSuma(numeros) + "<br>");
+    document.write("Números entre 0 y 100: " + filtrarNumeros0a100(numeros).join(", ") + "<br>");
+</script>

@@ -1,0 +1,87 @@
+1. ¿Qué quiere decir la modularidad en el ERP?
+El software ERP se puede dividir en módulos provocando que podamos utilizar únicamente las herramientas que necesitemos y nada más.
+Que dicho software sea compatible distintos sistemas operativos
+Es capaz de adaptarse a cualquier cambio de manera rápida y sencilla
+El software es de muy fácil comprensión, por lo que su uso es muy cómodo y fácil
+
+Respuesta correcta: El software ERP se puede dividir en módulos provocando que podamos utilizar únicamente las herramientas que necesitemos y nada más.
+
+2. ¿Qué es la integración en el ERP?
+El proceso de capacitar a los empleados para que usen el ERP de manera eficiente.
+La conexión del ERP con otras aplicaciones y sistemas para intercambiar información de manera automatizada.
+La instalación del software ERP en los servidores de la empresa.
+La actualización periódica del software ERP para mantenerlo al día.
+
+Resùesta correcta es la b)
+
+3. ¿Cuáles son las 2 características principales de un ERP ?
+ 	a)Personalización y Adaptabilidad
+	b)Modularidad e integración
+	c)Globalización y Seguridad
+	d)Globalización y Modularidad
+
+Respuesta correcta b)
+
+4. ¿Cuál de los siguientes es un ejemplo de medida de seguridad en un sistema de gestión empresarial?
+a) Creación de informes detallados
+b) Acceso a los datos sin restricciones
+c) Implementación de encriptación de datos
+d) Exportación de datos a hojas de cálculo
+
+Respuesta correcta: c) Implementación de encriptación de datos
+
+5. ¿Qué implica la integración en un sistema de gestión empresarial?
+a) Permitir que los empleados trabajen desde casa
+b) Conectar y compartir datos entre diferentes módulos o sistemas
+c) Controlar el acceso de los usuarios a diferentes niveles
+d) Personalizar la interfaz del usuario
+
+Respuesta correcta: b) Conectar y compartir datos entre diferentes módulos o sistemas
+
+6. ¿Cuál es el propósito de la personalización en un sistema de gestión empresarial?
+a) Cambiar el idioma del sistema
+b) Adaptar el sistema a las necesidades específicas de la empresa
+c) Integrar datos financieros de otras empresas
+d) Exportar informes en diferentes formatos
+
+Respuesta correcta: b) Adaptar el sistema a las necesidades específicas de la empresa
+
+7. ¿Qué significa que un sistema de gestión empresarial sea "completo"?
+a) Que incluye un módulo de facturación
+b) Que cubre todas las áreas operativas críticas de la empresa
+c) Que es fácil de usar por todos los empleados
+d) Que está integrado con otros sistemas de gestión
+
+Respuesta correcta: b) Que cubre todas las áreas operativas críticas de la empresa
+
+8. ¿Qué característica es esencial para que un sistema de gestión empresarial soporte la globalización? 
+a) Soporte para múltiples idiomas y monedas
+b) Control del inventario local
+c) Capacidad de operar en modo offline
+d) Personalización de la interfaz de usuario
+
+Respuesta correcta: a) Soporte para múltiples idiomas y monedas
+
+9. ¿Cuál de los siguientes describe mejor el concepto de "información instantánea" en un sistema de gestión empresarial?
+a) Almacenamiento de datos históricos
+b) Visualización de datos actualizados en tiempo real
+c) Exportación periódica de informes
+d) Programación de reportes mensuales
+
+Respuesta correcta: b) Visualización de datos actualizados en tiempo real
+
+10. ¿Qué característica representa la adaptabilidad en un sistema de gestión empresarial? 
+a) La capacidad de personalizar informes
+b) La posibilidad de añadir nuevos módulos conforme la empresa crece
+c) El control de acceso para diferentes niveles de usuarios
+d) La gestión de múltiples monedas en un solo sistema
+
+Respuesta correcta: b) La posibilidad de añadir nuevos módulos conforme la empresa crece
+
+11. ¿Cuál es una ventaja clave de un sistema de gestión empresarial modular?
+a) Permitir la gestión de múltiples usuarios simultáneamente
+b) Facilitar la adición o eliminación de funcionalidades según las necesidades de la empresa
+c) Asegurar la protección de datos en todos los niveles
+d) Integrar todos los datos en un solo archivo exportable
+
+Respuesta correcta: b) Facilitar la adición o eliminación de funcionalidades según las necesidades de la empresa

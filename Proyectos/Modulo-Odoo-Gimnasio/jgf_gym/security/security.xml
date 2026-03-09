@@ -1,0 +1,17 @@
+<odoo>
+    <data noupdate="1">
+        <record id="category_gym" model="ir.module.category">
+            <field name="name">Gimnasio</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="jgf_gym_acceso_completo" model="res.groups">
+            <field name="name">Gimnasio - Acceso Completo</field>
+            <field name="category_id" ref="category_gym"/>
+        </record>
+
+        <record id="jgf_gym_acceso_restringido" model="res.groups">
+            <field name="name">Gimnasio - Acceso Restringido</field>
+            <field name="category_id" ref="category_gym"/>
+        </record>
+    </data>
+</odoo>

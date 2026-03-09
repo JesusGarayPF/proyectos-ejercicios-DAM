@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+cliente_acceso_completo,jgf_gym.cliente,model_jgf_gym_cliente,jgf_gym_acceso_completo,1,1,1,1
+cliente_acceso_restringido,jgf_gym.cliente,model_jgf_gym_cliente,jgf_gym_acceso_restringido,1,0,0,0
+
+membresia_acceso_completo,jgf_gym.membresia,model_jgf_gym_membresia,jgf_gym_acceso_completo,1,1,1,1
+membresia_acceso_restringido,jgf_gym.membresia,model_jgf_gym_membresia,jgf_gym_acceso_restringido,1,0,0,0
+
+actividad_acceso_completo,jgf_gym.actividad,model_jgf_gym_actividad,jgf_gym_acceso_completo,1,1,1,1
+actividad_acceso_restringido,jgf_gym.actividad,model_jgf_gym_actividad,jgf_gym_acceso_restringido,1,0,0,0

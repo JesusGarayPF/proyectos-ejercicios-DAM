@@ -1,0 +1,93 @@
+<script>
+    /*
+     * Cual es el estado del arte de programar con IA ?
+     * - Busca e indica las ultimas IA para programar
+     *   GitHub Copilot, ChatGPT, Tabnine, Kite, Amazon CodeWhisperer, Replit Ghostwriter e Intellicode
+     * - Ver video1 en clase. Pequeño debate: ( video1 )
+     * - Buscar IA para programar
+     *   ( ide jsfiddle )( chatgptspanish )( echatgpt )( bing ai )
+     * - Selecciona y ejecuta una IA para programar.
+     * - Crea una función JS usando IA que sume, reste, multiplique dos números en js. 
+     * - Escribe dentro de tu programa un comentario con el prompt y el chatGPT utilizado.
+     */
+
+    // Usando ChatGPT con el prompt: "Crea una función en JavaScript que sume, reste o multiplique dos números y muestre el resultado por pantalla usando write".
+       El resultado no fue correcto a la primera, pero copiandole el texto que salía por pantalla se corrigío a si mismo
+    function calcular(num1, num2, operador) {
+        switch (operador) {
+            case '+':
+                return num1 + num2;
+            case '-':
+                return num1 - num2;
+            case '*':
+                return num1 * num2;
+            default:
+                return 'Operador no válido. Usa +, - o *';
+        }
+    }
+
+    // Mostrar los resultados usando document.write para que sea visible en la página
+    document.write("Resultado de la suma: " + calcular(5, 3, '+') + "<br>"); // Muestra: 8
+    document.write("Resultado de la resta: " + calcular(5, 3, '-') + "<br>"); // Muestra: 2
+    document.write("Resultado de la multiplicación: " + calcular(5, 3, '*') + "<br>"); // Muestra: 15
+    document.write("Resultado de operador no válido: " + calcular(5, 3, '/') + "<br>"); // Muestra: Operador no válido. Usa +, - o *
+
+    /*
+     * - Mejora tu prompt escribiéndolo en inglés.
+     * Usando ChatGPT con el prompt en inglés: "Create a JavaScript function that adds, subtracts or multiplies two numbers and shows the result on screen using write"
+     */
+    function calculate(num1, num2, operator) {
+        switch (operator) {
+            case '+':
+                return num1 + num2;
+            case '-':
+                return num1 - num2;
+            case '*':
+                return num1 * num2;
+            default:
+                return 'Invalid operator. Use +, -, or *';
+        }
+    }
+
+    // Mostrar los resultados usando document.write
+    document.write("Result of addition: " + calculate(10, 5, '+') + "<br>"); // Output: 15
+    document.write("Result of subtraction: " + calculate(10, 5, '-') + "<br>"); // Output: 5
+    document.write("Result of multiplication: " + calculate(10, 5, '*') + "<br>"); // Output: 50
+    document.write("Result of invalid operator: " + calculate(10, 5, '/') + "<br>"); // Output: Invalid operator. Use +, -, or *
+
+    /*
+     * - Repite con otras IA.
+     * ---Con Copilot---
+     */
+    function calculate(num1, num2, operation) {
+        switch (operation) {
+            case 'add':
+                return num1 + num2;
+            case 'subtract':
+                return num1 - num2;
+            case 'multiply':
+                return num1 * num2;
+            default:
+                return 'Invalid operation';
+        }
+    }
+
+    // Mostrar los resultados usando document.write
+    document.write("Result of add operation: " + calculate(5, 3, 'add') + "<br>"); // Output: 8
+    document.write("Result of subtract operation: " + calculate(5, 3, 'subtract') + "<br>"); // Output: 2
+    document.write("Result of multiply operation: " + calculate(5, 3, 'multiply') + "<br>"); // Output: 15
+
+    /*
+     * Conclusiones sobre IA:
+     * - Es una herramienta para trabajar/desarrollar/depurar/mejorar tu código?
+     * - No sirve para aprobar un examen?
+     * - Me capacita como desarrollador?
+     * - Crea el mejor código?
+     * - Añade entornos y librerías?
+
+     * - Si tuviera que responder por los resultados con este ejercicio, diría que hace buenas aproximaciones a lo que le pides,
+       pero que hace exctamente lo que le pides, de forma que o sabes de ante mano muy claramente como debe generarse y presentarse el resultado
+       o va a generar resultados menos óptimos de los que haría un humano capacitado. Por si solo no te aprueba un examen ni te habilita para un trabajo
+       para el que no estás capacitado.
+     */
+</script>

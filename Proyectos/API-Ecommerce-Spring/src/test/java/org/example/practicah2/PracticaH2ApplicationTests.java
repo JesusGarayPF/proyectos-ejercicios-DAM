@@ -1,0 +1,13 @@
+package org.example.practicah2;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class PracticaH2ApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

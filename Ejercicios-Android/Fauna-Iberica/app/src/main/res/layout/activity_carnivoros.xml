@@ -1,0 +1,202 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTituloMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:text="Carnívoros"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:padding="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Lobo Ibérico -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgLoboIberico"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/rbloboiberico" />
+
+                    <RadioButton
+                        android:id="@+id/rbLoboIberico"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvLoboIberico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:text="Lobo Ibérico"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Gineta -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgGineta"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/rbgineta" />
+
+                    <RadioButton
+                        android:id="@+id/rbGineta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvGineta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:text="Gineta"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Zorro -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgZorro"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/rbzorro" />
+
+                    <RadioButton
+                        android:id="@+id/rbZorro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvZorro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:text="Zorro"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Lince Ibérico -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgLinceIberico"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/rblinceiberico" />
+
+                    <RadioButton
+                        android:id="@+id/rbLinceIberico"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvLinceIberico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:text="Lince Ibérico"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Nutria Ibérica -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgNutriaIberica"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/rbnutriaiberica" />
+
+                    <RadioButton
+                        android:id="@+id/rbNutriaIberica"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvNutriaIberica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:text="Nutria Ibérica"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

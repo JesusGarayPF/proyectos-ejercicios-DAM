@@ -1,0 +1,208 @@
+﻿codigo fuente ===
+R00.htm     : plantilla básica entrada desde array
+R01.htm     : plantilla avanzada entrada desde fichero
+entrada.txt : entrada de datos para R01
+repaso1.htm : madrid-2011-ejecicio-C
+repaso2.htm : madrid-2011-ejercicio-A
+repaso3.htm : B-nacional-2016
+
+enunciados ===
+http://www.programa-me.com/archive.php
+
+notas javascript ===
+
+repaso1.htm
+- (do,if,else,for)
+- parseFloat(d2)	; conversion de tipos		
+- ( d1!='N' && d1!='E' )	; operador AND 
+- var tipos=['DESAYUNO','COMIDA','MERIENDA','CENAS','COPAS'] ; 
+- media=suma/elementos ; división 
+
+repaso2.htm
+- if (d1.length<8) ; longitud de una cadena
+- resul=(Math.trunc(acumulador/10)+1)*10-acumulador ; truncar parte entera
+- if (acumulador%10==0) ; modulo o resto
+- busca=d1.substr(0,1) ; cortar una cadena
+- iPais=nPais.indexOf(busca) ; buscar un elemento en un array , -1 sino esta
+
+repaso3.htm
+var tmp=d1.split(',') ; dividir por separadores
+var ini=tmp[0],fin=tmp[1],oculto=tmp[2];
+if (error==false){if ( parseInt(ini)<1 ){error=true;}} ; comparador,conversion enteros
+for (j=1;j<parseInt(tmp[0])+1;j++){if (tmp[j]==oculto){esta='LO SABE';break;} ; salir del bucle} 
+
+CASOS DE PRUEBA ===
+
+repaso1 == entrada.txt
+Entrada
+D 2.8
+C 48
+A 8
+N 0
+D 15.33
+A 60
+M 12
+I 25
+E 0
+Salida
+COPAS#EMPATE#NO
+COMIDA#COPAS#SI
+
+repaso1 == (considerando repetir entrada)
+Entrada
+D 2.8
+D 2.8
+C 2.8
+A 2.8
+A 2.8
+N 0
+D 15.33
+A 60
+M 12
+I 25
+N 0
+D 3
+C 2
+A 1
+M 3
+E 0
+Salida
+EMPATE#EMPATE#SI
+COMIDA#COPAS#SI
+EMPATE#CENAS#NO
+
+
+repaso1 == entradaTodo.txt
+Entrada
+D 2.8
+C 48
+A 8
+N 0
+N 0
+N 0
+N 0
+D 10
+D 10
+N 0
+D 0
+N 0
+D 15.33
+A 60
+M 12
+I 25
+N 0
+D 1.1
+A 1.111
+M 1.1111
+I 1.11111
+C 1.11
+N 0
+D 1
+D 2
+A 2.3
+M 2.1
+I 2.2
+C 2
+E 0
+Salida
+COPAS#EMPATE#NO
+EMPATE#EMPATE#NO
+EMPATE#EMPATE#NO
+EMPATE#EMPATE#NO
+DESAYUNO#EMPATE#NO
+EMPATE#EMPATE#NO
+COMIDA#COPAS#SI
+CENAS#DESAYUNO#SI
+DESAYUNO#COPAS#NO
+
+
+repaso 2 ===
+entrada
+65839522
+65839521
+3804533043847
+3804533043841
+704533043847
+704533043849
+8414533043847
+3803657794257
+5603657794251
+0123657794259
+5003657794259
+7003657794257
+8905657794253
+7595657794257
+5093657794250
+5093657794251
+5093657794252
+5093657794253
+5093657794254
+5093657794255
+5093657794256
+5093657794257
+5093657794258
+5093657794259
+519365779426
+1234567000000
+0001234567804
+62
+6
+1234567895
+4
+0
+salida
+SI (65839522)
+NO (65839521)
+NO (3804533043847)
+SI#bulgaria (3804533043841)
+SI#EEUU (0704533043847)
+NO (0704533043849)
+SI#desconocido (8414533043847)
+SI#bulgaria (3803657794257)
+SI#portugal (5603657794251)
+SI#EEUU (0123657794259)
+SI#inglaterra (5003657794259)
+SI#noruega (7003657794257)
+SI#india (8905657794253)
+SI#venezuela (7595657794257)
+SI#inglaterra (5093657794250)
+NO (5093657794251)
+NO (5093657794252)
+NO (5093657794253)
+NO (5093657794254)
+NO (5093657794255)
+NO (5093657794256)
+NO (5093657794257)
+NO (5093657794258)
+NO (5093657794259)
+SI#EEUU (0519365779426)
+NO (1234567000000)
+NO (0001234567804)
+SI (00000062)
+NO (00000006)
+SI#EEUU (0001234567895)
+NO (00000004)
+
+repaso3 ===
+entrada
+1 1 1
+1 1
+1 2 2
+1 1
+1 2 2
+1 2
+1 10 4
+2 1 4
+1 10 1
+2 1 2
+1 1000 450
+2 400 500
+0 0 0
+
+salida
+LO SABE (#1,1,1#1,1#)
+LO SABE (#1,2,2#1,1#)
+LO SABE (#1,2,2#1,2#)
+NO LO SABE (#1,10,4#2,1,4#)
+LO SABE (#1,10,1#2,1,2#)
+NO LO SABE (#1,1000,450#2,400,500#)

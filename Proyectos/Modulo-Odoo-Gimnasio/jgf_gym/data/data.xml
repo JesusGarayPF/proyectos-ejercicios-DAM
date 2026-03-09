@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+        <!-- Membresías -->
+        <record id="membresia_basica" model="jgf_gym.membresia">
+            <field name="nombre">Básica</field>
+            <field name="precio">20.0</field>
+            <field name="duracion_meses">1</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="membresia_premium" model="jgf_gym.membresia">
+            <field name="nombre">Premium</field>
+            <field name="precio">50.0</field>
+            <field name="duracion_meses">3</field>
+            <field name="activo">True</field>
+        </record>
+
+        <!-- Clientes -->
+        <record id="cliente_juan" model="jgf_gym.cliente">
+            <field name="nombre">Juan</field>
+            <field name="apellido">Pérez</field>
+            <field name="email">juan.perez@example.com</field>
+            <field name="telefono">123456789</field>
+            <field name="fecha_nac">1990-01-01</field>
+            <field name="membresia_id" ref="membresia_basica"/>
+        </record>
+        <record id="cliente_maria" model="jgf_gym.cliente">
+            <field name="nombre">María</field>
+            <field name="apellido">Gómez</field>
+            <field name="email">maria.gomez@example.com</field>
+            <field name="telefono">987654321</field>
+            <field name="fecha_nac">1992-05-15</field>
+            <field name="membresia_id" ref="membresia_premium"/>
+        </record>
+
+        <!-- Actividades -->
+        <record id="actividad_yoga" model="jgf_gym.actividad">
+            <field name="nombre">Yoga</field>
+            <field name="duracion_mins">60</field>
+            <field name="dia_semana">monday</field>
+            <field name="hora_inicio">9.0</field>
+            <field name="clientes_ids" eval="[(4, ref('cliente_juan')), (4, ref('cliente_maria'))]"/>
+        </record>
+        <record id="actividad_spinning" model="jgf_gym.actividad">
+            <field name="nombre">Spinning</field>
+            <field name="duracion_mins">45</field>
+            <field name="dia_semana">wednesday</field>
+            <field name="hora_inicio">18.0</field>
+            <field name="clientes_ids" eval="[(4, ref('cliente_juan'))]"/>
+        </record>
+    </data>
+</odoo>

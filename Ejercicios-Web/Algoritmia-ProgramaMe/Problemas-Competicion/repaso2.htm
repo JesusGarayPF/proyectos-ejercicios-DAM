@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>ejercicio-A-madrid-2011</title>
+
+</head>
+ 
+<body>
+<script type="text/javascript">
+
+/*
+
+PREMISAS ==
+-los codigos son de 8 o 13 digitos
+-el codigo del pais de 1 a 3 digitos
+-se rellena a ceros por la izquierda y luego se comprueba el pais
+
+*/
+
+var entrada = [
+'65839522',
+'65839521',
+'3804533043847',
+'3804533043841',
+'704533043847',
+'704533043849',
+'8414533043847',
+'3803657794257',
+'5603657794251',
+'0123657794259',
+'5003657794259',
+'7003657794257',
+'8905657794253',
+'7595657794257',
+'5093657794250',
+'5093657794251',
+'5093657794252',
+'5093657794253',
+'5093657794254',
+'5093657794255',
+'5093657794256',
+'5093657794257',
+'5093657794258',
+'5093657794259',
+'519365779426',
+'1234567000000',
+'0001234567804',
+'62',
+'6',
+'1234567895',
+'4',
+'0'
+];
+
+/* entrada del enunciado */
+var entrada = [
+'65839522',
+'65839521',
+'8414533043847',
+'5029365779425',
+'5129365779425',
+'0'
+];
+
+
+/*
+
+PREMISA
+-si el numero no es de 8 o 13 se rellenan ceros por la izquierda
+
+CALCULOS
+-analizar el digito de control para ver si es correcto
+-rellenar con ceros codigos de 8 o 13
+-para los ean13 con dc ok buscar el pais en la tabla
+-buscar en la tabla paises de 1 digito , luego 2 , luego 3
+
+*/
+
+document.write("<b>entrada</b><br/>");
+
+var d1;
+var i=0;
+do{
+	d1=entrada[i];
+	document.write(d1+"<br/>");
+	i++;
+} while(d1!='0') // fin de fichero	
+
+/*
+se requieren numeros de 8 a 13 digitos
+rellenan por la izquierda de ceros
+hasta tener un numero de 8 a 13 
+*/
+
+var i=0;
+var ceros='0000000000000';  // 14 ceros
+d1=entrada[i];  // primero
+while(d1!='0'){	
+	if (d1.length<8){
+		d1=ceros.substr(0,8-d1.length)+d1;
+	}else if (d1.length<13 && d1.length>8){
+		d1=ceros.substr(0,13-d1.length)+d1;
+	}	
+	entrada[i]=d1;
+	i++;
+	d1=entrada[i]; 
+}
+console.log(entrada);
+
+// globales
+var nPais=['0','380','50','539','560','70','759','850','890'];
+var paises=['EEUU','bulgaria','inglaterra','irlanda','portugal','noruega','venezuela','cuba','india'];
+
+/* calculo */
+
+document.write("<b>salida</b><br/>");
+i=0;
+d1=entrada[i];
+while(d1!='0'){	
+	// calculo código de contol 
+	var acumulador=0;
+	var factor=3;
+	// recorrer hacia atras
+	for (j=d1.length-2;j>-1;j--){
+		// suma acumulada
+		acumulador+=factor*parseInt(d1[j]);
+		// alternancia entre par / impar		
+		if (factor==3){factor=1;}else{factor=3;} 
+	}
+	var resul;
+	if (acumulador%10==0){ // módulo , resto entero
+		resul=0;
+	}else{
+		// unidades hasta siguiente 10
+		resul=(Math.trunc(acumulador/10)+1)*10-acumulador; 
+	}
+	console.log(d1,' dc:',resul);
+	var ok;
+	if(resul==d1[d1.length-1]){ok='SI';}else{ok='NO';} 
+	document.write(ok);		
+	
+	// calculo del pais
+	d1=entrada[i];
+	if (d1.length==13 && ok=='SI'){ // solo ENA13 correctos
+		var iPais,pais;	
+		iPais=nPais.indexOf(d1.substr(0,1)); 
+		if (iPais==-1){ // no usar false , -1 no encontrado
+			pais='desconocido';
+			iPais=nPais.indexOf(d1.substr(0,2));
+			if(iPais==-1){
+				pais='desconocido';
+				iPais=nPais.indexOf(d1.substr(0,3));
+				if(iPais==-1){
+					pais='desconocido';
+				}else{
+					pais=paises[iPais];
+				}
+			}else{
+				pais=paises[iPais];
+			}
+		}else{
+			pais=paises[iPais];
+		}
+		console.log(d1.length,' ',ok,' ',d1,' pais:',pais);			
+		document.write('#'+pais);
+	}
+	document.write('  ('+d1+')<br/>');						
+	i++;
+	d1=entrada[i];
+}	
+
+</script>	
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvTituloMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginBottom="20dp"
+        android:text="Selecciona lo que quieres consultar"
+        android:textSize="24sp"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/holo_green_light"
+        android:textAlignment="center"
+        android:padding="8dp" />
+
+
+    <LinearLayout
+        android:id="@+id/radioGroupContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <RadioButton
+                android:id="@+id/rbCarnivoros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Carnívoros"
+                android:buttonTint="@color/black" />
+
+            <ImageView
+                android:id="@+id/imgCarnivoros"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/rgcarnivoros"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp">
+
+            <RadioButton
+                android:id="@+id/rbRapaces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Rapaces y Carroñeras"
+                android:buttonTint="@color/black" />
+
+            <ImageView
+                android:id="@+id/imgRapaces"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/rgrapaces"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

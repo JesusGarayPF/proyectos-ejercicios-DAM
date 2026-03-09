@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F5E6F2"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/tv_pulsaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pulsaciones: 0"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_puntuacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Puntos: 0"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView_slot"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/slot_animation" />
+
+        <ImageView
+            android:id="@+id/imageView_slot2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/slot_animation2" />
+
+        <ImageView
+            android:id="@+id/imageView_slot3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/slot_animation3" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jugar"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parar"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

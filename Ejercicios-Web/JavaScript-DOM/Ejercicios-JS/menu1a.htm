@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>menu1a</title>
+</head>
+
+<body>
+</body>
+<script>
+    const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?¿¡! ,.';
+    function iniciar() {
+        for (let i = 1; i < 4; i++) {
+            var ele = crearNodo('div');
+            ele.id = 'caja';
+            ele.style.width = "100px";
+            ele.style.height = "20px";
+            ele.style.backgroundColor = "white";
+            ele.style.border = "2px solid black";
+            ele.style.margin = "10px";
+            ele.style.display = "inline-block";
+            ele.style.textAlign = "center";
+            ele.innerHTML = 'Caja ' + i;
+            ele.style.float = "Left";
+            ele.style.cursor = "pointer"
+            ele.addEventListener('click', clickCaja);
+        }
+        var parrafo = crearNodo('p');
+        parrafo.style.clear = 'Left';
+        parrafo.id = "textoGenerado";
+    }
+    function crearNodo(tipo) {
+        var ele = document.createElement(tipo);
+            
+        return ele;
+    }
+    window.onload = iniciar;
+
+    function textoAleatorio() {
+        let frase = "";
+        for (let i = 0; i < 80; i++) {
+            let index = aleatorio();
+            frase += caracteres[index];
+        }
+        return frase;
+    }
+    function aleatorio() {
+        let charAleatorio = Math.floor(Math.random() * caracteres.length);
+        return charAleatorio;
+    }
+    function clickCaja() {
+        document.getElementById('textoGenerado').innerHTML = textoAleatorio();
+    }
+</script>
+
+</html>

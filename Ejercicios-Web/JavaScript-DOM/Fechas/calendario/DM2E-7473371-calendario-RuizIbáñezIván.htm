@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+
+    <script>
+
+        const anio = 2023;
+        const dias = "LMXJVSD";
+        const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+
+        function iniciar() {
+            var titulo = crearTitulo("div", "<b>Año 2023</b>");
+
+            for (let mes = 0; mes < 12; mes++) {
+                nodoMes(meses[mes]);
+                var diaUno = new Date(anio, mes, 1);
+                diaUno.setDate(diaUno.getDate() - diaUno.getDay() - 6);
+                var letra = 0;
+                for (let dia = 0; dia < 49; dia++) {
+                    var d = new Date(diaUno.getTime());
+                    d.setDate(diaUno.getDate() + dia);
+                    var ele = document.createElement("div");
+                    document.body.appendChild(ele);
+                    ele.style.width = "20px";
+                    ele.style.height = "50px";
+                    ele.style.backgroundColor = "lightyellow";
+                    ele.style.float = "left";
+                    ele.style.fontSize = "14px";
+                    ele.style.marginLeft = "2px";
+                    ele.style.textAlign = "center";
+                    ele.innerHTML = d.getDate() + "<br/>" + dias[letra];
+                    if (d.getMonth() == mes) {
+                        ele.style.backgroundColor = "#e6e600";
+                    } else {
+                        ele.style.backgroundColor = "#ffffcc";
+                    }
+
+                    if (d.getDay() == 5 || d.getDay() == 6) {
+                        ele.style.color = "red";
+                    }
+                    if (++letra == 7) letra = 0;
+                }
+            }
+        }
+
+        function crearTitulo(tipo, inner) {
+            var ele = document.createElement(tipo);
+            document.body.appendChild(ele);
+            ele.id = "titulo";
+            ele.innerHTML = inner;
+
+        }
+
+        function nodoMes(t) {
+            var ele = nodo();
+            ele.innerHTML = t;
+            ele.className = 'texto';
+            ele.style.width = "160px";
+            ele.style.height = "40px";
+            ele.style.fontSize = "14px";
+            ele.style.padding = "8px";
+            ele.style.float = "left";
+            ele.style.clear = "left";
+            ele.style.textAlign = "right";
+        }
+
+        function nodo() {
+            var ele = document.createElement('div');
+            document.body.appendChild(ele);
+            return ele;
+        }
+
+        window.onload = iniciar;
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

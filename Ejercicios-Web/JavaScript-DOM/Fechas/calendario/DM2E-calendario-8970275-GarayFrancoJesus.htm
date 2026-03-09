@@ -1,0 +1,86 @@
+<!--(calendario)[fechas]
+Realiza un calendario lineal
+-Establece con float y clear el maquetado de los dias en lineas
+-Poner todos los textos a 14px
+-Establece los estilos de cada tipo de dia usando clases (laborable,festivo,dentro del mes: normal,apagado)
+-Añade los meses de los meses con letras a 24px
+lenguaje:[],getMonth,getDay(dia de la semana),new Date,getTime,setDate,getDay()+1,var1=(cond)?val1:val2,if(cond)var=val;-->
+<script>
+    const fecha = new Date(2020, 0, 1);
+    const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    const dias = ["D", "L", "M", "X", "J", "V", "S"];
+    function generarCabecera(divMes) {
+        const cabecera = document.createElement("div");
+        cabecera.id = fecha.getMonth();
+        cabecera.innerHTML = `${meses[fecha.getMonth()]}`
+        divMes.appendChild(cabecera);
+    }
+    function generarMes() {
+        const divMes = document.createElement("div");
+        divMes.id = "Div " + meses[fecha.getMonth()];
+        divMes.innerHTML = `${meses[fecha.getMonth()]}`;
+        document.body.appendChild(divMes);
+        generarCabecera(div);
+        const mesActual = fecha.getMonth();
+        while (fecha.getMonth() === mesActual) {
+            const divDia = document.createElement("div");
+            if (fecha.getDay() === 0 || fecha.getDay() === 6) divDia.className = "festivo dentroMes";
+            else divDia.className = "laborable dentroMes"
+            divDia.innerHTML =
+            `
+            ${fecha.getDate()}<br>
+            ${dias[fecha.getDay()]}
+
+            `
+            fecha.setDate(fecha.getDate() + 1);
+            divMes.appendChild(divDia);
+        }
+        mesActual = fecha.getMonth();
+    }
+    function generarAnio() {
+        const anio = document.createElement("h1");
+        anio.id = fecha.getFullYear();
+        anio.innerHTML = `<strong>Año ${fecha.getFullYear()}</strong>`;
+        for (let i = 0; i < 12; i++) {
+            generarMes();
+        }
+    }
+    function añadirEstilos() {
+        const style = document.createElement("style");
+        style.id = "estilos";
+        style.innerHTML =
+            `
+        .divMes{
+            float: left;
+            clear: left;
+        }
+        .laborable{
+            color:black;
+            text-align: center;
+            display: inline-block;
+            font-size: 14px;
+
+        }
+        .festivo{
+            color:red;
+            text-align: center;
+            display: inline-block;
+            font-size: 14px;
+        }
+        .dentroMes{
+            background-color: #efde51;
+        }
+        .fueraMes{
+             background-color: #ede6a6;
+        }
+        .cabecera{
+            font-size: 24px;
+            font-weight: bold;
+        }
+        `
+        document.body.appendChild(style)
+    }
+    añadirEstilos();
+    generarAnio();
+</script>

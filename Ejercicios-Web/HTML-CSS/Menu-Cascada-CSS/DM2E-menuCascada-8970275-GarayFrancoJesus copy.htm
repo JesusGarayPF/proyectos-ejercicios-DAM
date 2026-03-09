@@ -1,0 +1,146 @@
+<script>
+    var sitios = [
+        'A1#america#00',
+        'A2#europa#00',
+        'A3#africa#00',
+        'A4#asia#00',
+        'B1#canada#A1',
+        'B2#eeuu#A1',
+        'B3#brasil#A1',
+        'B4#argentina#A1',
+        'B5#uruguay#A1',
+        'B6#chile#A1',
+        'B7#francia#A2',
+        'B8#italia#A2',
+        'C1#toronto#B1',
+        'C2#quebec#B1',
+        'C3#lyon#B7',
+        'C4#paris#B7',
+        'C5#bayona#B7',
+        'C6#nantes#B7',
+        'C7#toulouse#B7'
+    ];
+
+    function generarEstructura() {
+        const pre = document.createElement("pre");
+        pre.id = "lugares";
+        document.body.appendChild(pre);
+
+        const migas = document.createElement("div");
+        migas.id = "migas";
+        document.body.appendChild(migas);
+
+        const menu = document.createElement("div");
+        menu.id = "menu";
+        document.body.appendChild(menu);
+
+        generarEstilos();
+        mostrarLugares();
+        mostrarMenu("00");
+    }
+
+    function mostrarLugares() {
+        const pre = document.getElementById("lugares");
+        pre.innerHTML = "Lugares:\n";
+
+        sitios.forEach(lugar => {
+            pre.innerHTML += `${lugar}\n`;
+        });
+    }
+
+    function generarEstilos() {
+        const estilos = document.createElement("style");
+        estilos.innerHTML = `
+            #migas {
+                margin-bottom: 20px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            .caja {
+                width: 100px;
+                height: 30px;
+                margin: 4px;
+                padding: 4px;
+                color: black;
+                text-align: center;
+                display: inline-block;
+                cursor: pointer;
+            }
+            .continente {
+                background-color: #f3a451;
+            }
+            .pais {
+                background-color: #f3cf51;
+            }
+            .ciudad {
+                background-color: #f3e451;
+            }
+            #menu {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        `;
+        document.head.appendChild(estilos);
+    }
+
+    function filtrarOpciones(nivel) {
+        return sitios.filter(sitio => sitio.split("#")[2] === nivel);
+    }
+
+    function mostrarMenu(nivel) {
+        const menu = document.getElementById("menu");
+        menu.innerHTML = "";
+
+        filtrarOpciones(nivel).forEach(opcion => {
+            const [id, nombre] = opcion.split("#");
+            const item = document.createElement("div");
+            item.className = "caja";
+            asignarClase(id, item);
+            item.textContent = nombre;
+            item.onclick = () => actualizarMenu(id, nombre);
+            menu.appendChild(item);
+        });
+    }
+
+    function asignarClase(id, item) {
+        if (id.startsWith('A')) item.classList.add("continente");
+        else if (id.startsWith('B')) item.classList.add("pais");
+        else if (id.startsWith('C')) item.classList.add("ciudad");
+    }
+
+    function obtenerRuta(id) {
+        const ruta = [];
+        while (id !== "00") {
+            const sitio = sitios.find(s => s.split("#")[0] === id);
+            if (!sitio) break;
+            const [nivelId, nombre, nivelPadre] = sitio.split("#");
+            ruta.unshift({ id: nivelId, nombre });
+            id = nivelPadre;
+        }
+        return ruta;
+    }
+
+    function actualizarMenu(id, nombre) {
+        const migas = document.getElementById("migas");
+        migas.innerHTML = "";
+
+        const raizMiga = document.createElement("span");
+        raizMiga.textContent = "Inicio";
+        raizMiga.onclick = () => mostrarMenu("00");
+        migas.appendChild(raizMiga);
+
+        obtenerRuta(id).forEach((nivel, index) => {
+            const separador = document.createElement("span");
+            separador.textContent = " > ";
+            migas.appendChild(separador);
+
+            const miga = document.createElement("span");
+            miga.textContent = nivel.nombre;
+            miga.onclick = () => mostrarMenu(nivel.id);
+            migas.appendChild(miga);
+        });
+
+        mostrarMenu(id);
+    }
+    window.onload = generarEstructura;
+</script>

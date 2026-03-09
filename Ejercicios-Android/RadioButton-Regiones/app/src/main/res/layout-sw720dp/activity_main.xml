@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="30dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:id="@+id/tv_pulsaciones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pulsaciones: 0"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:paddingEnd="40dp" />
+
+        <TextView
+            android:id="@+id/tv_puntuacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Puntuación: 0"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="20dp">
+
+        <ImageView
+            android:id="@+id/imageView_slot"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:scaleType="fitCenter"
+            android:layout_marginEnd="10dp" />
+
+        <ImageView
+            android:id="@+id/imageView_slot2"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:scaleType="fitCenter"
+            android:layout_marginEnd="10dp" />
+
+        <ImageView
+            android:id="@+id/imageView_slot3"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="350dp"
+            android:layout_height="110dp"
+            android:background="@color/blue"
+            android:text="Jugar"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:layout_marginEnd="20dp" />
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="350dp"
+            android:layout_height="110dp"
+            android:background="@color/red"
+            android:text="Detener"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+</LinearLayout>

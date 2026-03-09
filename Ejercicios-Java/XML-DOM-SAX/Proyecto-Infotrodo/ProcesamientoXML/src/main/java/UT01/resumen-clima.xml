@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resumen-clima-ciudad>
+    <ciudad nombre="madrid">
+        <temperatura-promedio max="18.67" min="12.67" promedio="15.67"/>
+        <humedad-promedio>75.00</humedad-promedio>
+        <presion-promedio>1014.67</presion-promedio>
+    </ciudad>
+    <ciudad nombre="barcelona">
+        <temperatura-promedio max="18.67" min="12.67" promedio="15.67"/>
+        <humedad-promedio>75.00</humedad-promedio>
+        <presion-promedio>1014.67</presion-promedio>
+    </ciudad>
+    <ciudad nombre="valencia">
+        <temperatura-promedio max="18.67" min="12.67" promedio="15.67"/>
+        <humedad-promedio>75.00</humedad-promedio>
+        <presion-promedio>1014.67</presion-promedio>
+    </ciudad>
+</resumen-clima-ciudad>

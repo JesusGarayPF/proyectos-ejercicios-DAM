@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item android:drawable="@drawable/cereza" android:duration="100" />
+    <item android:drawable="@drawable/fresa" android:duration="100" />
+    <item android:drawable="@drawable/granada" android:duration="100" />
+    <item android:drawable="@drawable/limon" android:duration="100" />
+    <item android:drawable="@drawable/manzana" android:duration="100" />
+    <item android:drawable="@drawable/melocoton" android:duration="100" />
+    <item android:drawable="@drawable/melon" android:duration="100" />
+    <item android:drawable="@drawable/naranja" android:duration="100" />
+    <item android:drawable="@drawable/pera" android:duration="100" />
+    <item android:drawable="@drawable/pina" android:duration="100" />
+    <item android:drawable="@drawable/platano" android:duration="100" />
+    <item android:drawable="@drawable/sandia" android:duration="100" />
+    <item android:drawable="@drawable/tomate" android:duration="100" />
+    <item android:drawable="@drawable/uvas" android:duration="100" />
+
+
+</animation-list>

@@ -1,0 +1,64 @@
+Enviar zip con txt y jpg. Exponer en clase, vende tu prototipo !.
+Buscaremos varios agregadores (trivago,amazon,idealo,..). 
+
+
+a) ANÁLISIS DE TAREAS:
+
+Listado de productos:
+*Google Shopping: Los productos se presentan en un formato limpio, con imágenes, nombre del producto, precio, tienda y valoración de usuarios en un diseño tipo grid.
+*Idealo: Ofrece una vista de lista con imagen, título, precio mínimo y máximo, y un botón para ver detalles o comprar.
+*Kelkoo: Muestra una cuadrícula con imágenes grandes y una breve descripción de cada producto, así como el precio.
+
+Características de un producto:
+*Google Shopping: Despliega las especificaciones clave (precio, envío, calificaciones) junto con una lista de tiendas donde se vende el producto.
+*Idealo: Muestra las características del producto organizadas por secciones como especificaciones técnicas y opiniones de los usuarios.
+*Kelkoo: Proporciona una descripción básica del producto y permite comparar precios de distintas tiendas.
+
+Navegación:
+*Google Shopping: La navegación es simple y está centrada en la barra de búsqueda. Además, tiene categorías principales en la parte superior.
+*Idealo: Ofrece navegación por categorías en un menú lateral, con un diseño responsivo y fácil de explorar.
+*Kelkoo: Navegación en la parte superior y un menú lateral con las principales categorías, aunque es algo confuso.
+
+Retorno a home:
+*Google Shopping: Un clic en el logo de Google te lleva de vuelta a la página principal, lo cual es intuitivo.
+*Idealo: El logo de la esquina superior izquierda redirige a la página de inicio.
+*Kelkoo: El logotipo en la parte superior también lleva a la home, aunque el acceso no es tan claro.
+
+Migas de pan (breadcrumbs):
+*Google Shopping: No tiene un sistema de migas de pan muy visible.
+*Idealo: Presenta un sistema de migas claro, mostrando la ruta exacta del usuario en la página.
+*Kelkoo: Usa migas de pan para mostrar la ruta de navegación dentro de las categorías.
+
+Filtros sobre los productos del listado:
+*Google Shopping: Filtra por precio, tienda, marca y otros atributos específicos del producto.
+*Idealo: Filtros detallados por precio, tienda, características técnicas, valoraciones y opciones de envío.
+*Kelkoo: Ofrece filtros básicos como rango de precios, tienda y características generales.
+
+Ordenación del listado:
+*Google Shopping: Permite ordenar por relevancia, precio ascendente/descendente y calificación.
+*Idealo: Permite ordenar por popularidad, precio, valoraciones, o nuevas ofertas.
+*Kelkoo: Ordena por relevancia y precio principalmente, con algunas opciones adicionales.
+
+Búsqueda de un producto:
+*Google Shopping: Búsqueda predictiva con sugerencias automáticas, permite realizar búsquedas detalladas.
+*Idealo: Búsqueda eficiente con sugerencias automáticas basadas en lo más buscado.
+*Kelkoo: Búsqueda básica con resultados relevantes, pero menos opciones avanzadas.
+
+b) IDENTIFICACION DE MEJORES SOLUCIONES:
+Listado de productos: Google Shopping (Formato limpio, imágenes grandes y organizadas en un grid).
+Características de un producto: Idealo (Organización clara y detallada de especificaciones y opiniones).
+Navegación: Google Shopping (Barra de búsqueda principal clara y categorización superior sencilla).
+Retorno a home: Google Shopping (Un clic en el logo de Google es intuitivo y fácil de acceder).
+Migas de pan: Idealo (Ruta clara y precisa en todas las categorías).
+Filtros sobre los productos: Idealo (Filtros avanzados por especificaciones técnicas, precio y envío).
+Ordenación del listado: Idealo (Múltiples opciones como popularidad, valoraciones y precios).
+Búsqueda de un producto: Google Shopping (Búsqueda predictiva avanzada con opciones detalladas).
+
+c) PROTOTIPO DE INTERFAZ:
+Encabezado: Barra de búsqueda prominente al estilo de Google Shopping, con acceso directo a categorías populares.
+Cuerpo principal: Grid de productos con imágenes grandes y opciones de precios visibles, similar a Google Shopping.
+Filtros: En el lateral izquierdo, filtros detallados como los de Idealo, con opciones para refinar la búsqueda por características.
+Breadcrumbs (migas de pan): Justo debajo del encabezado, siguiendo el modelo de Idealo.
+Retorno a home: Clic en el logo visible en la esquina superior izquierda, estilo Google Shopping.
+Ordenación: Un menú desplegable para ordenar productos por precio, relevancia, valoraciones, como en Idealo.
+c) Diseña un prototipo de interfaz que tenga todas estas soluciones. Enviar un jpg con el dibujo del prototipo ( puedes usar un dibujo a mano alzada y fotografiado o puedes usar excalidraw o canva.com )

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8" />
+    <title>casosPruebaR1</title>
+</head>
+
+
+<body>
+    <script>
+        // 'D' = Desayuno, 'A' = Almuerzo, 'M' = Merienda, 'C' = Cena, 'I' = Copas. 'N' seguido de '0' para indicar el fin de un día, y 'E' seguido de '0' para marcar el fin de la entrada.
+        var datos_entrada = [
+            'D', '2.8', 'C', '48.0', 'A', '8', 'N', '0',            // Día 1
+            'D', '15.33', 'A', '60', 'M', '12', 'I', '25', 'E', '0' // Día 2
+        ];
+
+
+        console.log(datos_entrada); // Imprimir los datos en la consola para depuración
+
+
+        // Variables globales
+        var categoria_actual, valor_actual;
+        var ventas_por_categoria = [0, 0, 0, 0, 0]; // Almacena las ventas acumuladas para Desayuno, Almuerzo, Merienda, Cena y Copas.
+        var nombres_categorias = ['DESAYUNO', 'ALMUERZO', 'MERIENDA', 'CENA', 'COPAS']; // Nombre de las categorías de venta
+
+
+        // Mostrar la entrada de datos
+        document.write("<b>DATOS DE ENTRADA</b><br/>");
+        var i = 0;
+        do {
+            categoria_actual = datos_entrada[i];
+            valor_actual = datos_entrada[i + 1];
+            if (categoria_actual != 'N' && categoria_actual != 'E') {
+                valor_actual = parseFloat(valor_actual).toFixed(2);
+            }
+            document.write(categoria_actual + " " + valor_actual + "<br/>");
+            i += 2;
+        } while (categoria_actual != 'E'); // Fin de la entrada
+
+
+        // Proceso para calcular los resultados
+        document.write("<b>RESULTADOS DE SALIDA</b><br/>");
+        var indice_categoria;
+        i = 0;
+        do {
+            categoria_actual = datos_entrada[i];
+            valor_actual = datos_entrada[i + 1];
+
+
+            if (categoria_actual != 'N' && categoria_actual != 'E') {
+                // Asignar el índice de la categoría correspondiente (Desayuno, Almuerzo, Merienda, etc.)
+                if (categoria_actual == 'D') { indice_categoria = 0; }
+                if (categoria_actual == 'A') { indice_categoria = 1; }
+                if (categoria_actual == 'M') { indice_categoria = 2; }
+                if (categoria_actual == 'I') { indice_categoria = 3; }
+                if (categoria_actual == 'C') { indice_categoria = 4; }
+
+
+                // Acumular ventas para la categoría actual
+                ventas_por_categoria[indice_categoria] += parseFloat(valor_actual);
+
+
+            } else {
+                // Inicialización de variables para los cálculos
+                var max_venta = -1, min_venta = 999;
+                var suma_total = 0, media_total = 0;
+                var suma_almuerzos = 0, media_almuerzos = 0;
+                var contador_total = 0, contador_almuerzos = 0;
+                var categoria_venta_minima, categoria_venta_maxima, conteo_venta_minima = 0, conteo_venta_maxima = 0;
+
+
+                // Cálculos por cada categoría
+                for (var k = 0; k < ventas_por_categoria.length; k++) {
+                    // Aumentar el conteo si la venta es mínima o máxima
+                    if (ventas_por_categoria[k] == min_venta) { conteo_venta_minima++; }
+                    if (ventas_por_categoria[k] == max_venta) { conteo_venta_maxima++; }
+
+
+                    // Si encuentra otra venta mínima, actualiza el valor mínimo encontrado y reinicia el conteo.
+                    if (ventas_por_categoria[k] < min_venta) {
+                        min_venta = ventas_por_categoria[k];
+                        categoria_venta_minima = k;
+                        conteo_venta_minima = 0;
+                    }
+                    // Si encuentra otra venta máxima, actualiza el valor máximo encontrado y reinicia el conteo.
+                    if (ventas_por_categoria[k] > max_venta) {
+                        max_venta = ventas_por_categoria[k];
+                        categoria_venta_maxima = k;
+                        conteo_venta_maxima = 0;
+                    }
+
+
+                    // Sumar ventas válidas (no cero) para la media total
+                    if (ventas_por_categoria[k] != 0) {
+                        suma_total += ventas_por_categoria[k];
+                        contador_total++;
+                    }
+
+
+                    // Considerar los almuerzos (comidas) para la media de almuerzos
+                    if (ventas_por_categoria[k] != 0 && k == 1) {
+                        suma_almuerzos += ventas_por_categoria[k];
+                        contador_almuerzos++;
+                    }
+                }
+
+
+                // Calcular la media de ventas (general y solo de almuerzos)
+                if (suma_almuerzos != 0) {
+                    media_almuerzos = suma_almuerzos / contador_almuerzos;
+                }
+                if (suma_total != 0) {
+                    media_total = suma_total / contador_total;
+                }
+
+
+                // Imprimir los resultados
+                if (conteo_venta_maxima > 0) {
+                    document.write("Categoría con el <b>máximo</b> de ventas: EMPATE<br/>");
+                } else {
+                    document.write("Categoría con el <b>máximo</b> de ventas: " + nombres_categorias[categoria_venta_maxima] + "<br/>");
+                }
+
+
+                if (conteo_venta_minima > 0) {
+                    document.write("Categoría con el <b>mínimo</b> de ventas: EMPATE<br/>");
+                } else {
+                    document.write("Categoría con el <b>mínimo</b> de ventas: " + nombres_categorias[categoria_venta_minima] + "<br/>");
+                }
+
+
+                // Determinar si las ventas de comidas superan la media general
+                if (media_total > media_almuerzos) {
+                    document.write('La media de ventas de almuerzos <b>no supera</b> la media de ventas total.<br/>');
+                } else {
+                    document.write('La media de ventas de almuerzos <b>supera</b> la media de ventas total.<br/>');
+                }
+
+
+                document.write("<br/>");
+
+
+                // Reiniciar las ventas para el próximo día
+                ventas_por_categoria = [0, 0, 0, 0, 0];
+            }
+            i += 2; // Avanzar en la entrada
+        } while (categoria_actual != 'E'); // Fin de archivo
+
+
+    </script>
+</body>
+
+
+</html>
+

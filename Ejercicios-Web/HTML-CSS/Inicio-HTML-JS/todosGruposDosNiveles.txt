@@ -1,0 +1,223 @@
+grupo 1:	
+Periféricos
+		altavoces
+		teclados
+		Monitores
+		Microfono
+		Raton
+		Alfombrillas
+		imresoras
+	Gaming
+		teclados inalámbricos
+		Monitores 4K
+		sistema de sonido 5.1
+		ratón inalambrico
+		cascos
+		portátiles
+	Componentes
+		caja
+		placa base
+		ram
+		fuente alimentacion
+		tarjeta sonido
+		tarjeta de red
+		SO
+		CPU
+	Almacenamiento
+		ssd
+		hdd
+		servidos NAS
+		usb
+		m.2
+	Refrigeración
+		ventiladores
+		disipadores
+		pasta térmica
+	cables
+		cargadores
+		hdmi
+		adaptador bluetooht
+		adaptadores
+
+grupo 2:
+	-Componentes
+    -   placa base
+    -   grafica
+    -   ram
+    -   cpu
+    -   caja
+    -   fuente de alimentacion
+    -   tarjeta de red
+    -   tarjeta sonido
+
+-Perifericos
+    -   monitores
+    -   altavoces
+    -   teclados
+    -   raton
+    -   alfombrillas
+    -   cascos
+    -   impresoras
+    -   microfono
+    -   teclado inalambrico
+    -   raton inalambrico
+    -   monitor 4k
+    -   sistemas de sonido 5.1
+
+-Almacenamiento
+    -   ssd
+    -   hdd
+    -   m.2
+    -   usd
+
+-Cable
+    -   cargador
+    -   hdmi
+
+-Adaptadores
+    -   adaptador bluetooht
+
+-Refrigeracion
+    -   ventiladores
+    -   pasta termica
+    -   disipador
+
+-Gaming
+    -   portatiles
+
+-SO
+
+-Servidor NAS
+
+grupo 3: 
+componentes
+    cpu
+    grafica
+    ram
+    placa base
+    fuente alimentacion
+    caja
+    tarjeta sonido
+    tarjeta de red
+
+almacenamiento
+    ssd
+    hdd
+    m.2
+    
+refrigeracion
+    ventiladores
+    pasta termica
+    disipadores
+    
+perifericos
+    altavoces
+    microfonos
+    teclados
+    raton
+    alfombrillas
+    monitores
+    cascos
+    sistema de sonido 5.1
+    raton inalambrico
+    usb
+    impresoras
+    monitor 4k 
+    servidor NAS
+    SO
+
+gaming
+    portatiles
+
+cables
+    cargadores
+    hdmi
+    adaptadores
+    adaptador bluetooth
+
+grupo 4:
+Refrigeración
+	refrigeración liquida
+	ventiladores
+	pasta térmica
+	disipadores
+Componentes
+	Caja
+	Fuente de alimentación
+	Gráfica
+	Placa base
+	Disipadores
+	Tarjeta de sonido
+	Tarjeta de red
+	SO (Sistema Operativo)
+	CPU
+	RAM
+Almacenamiento
+	SSD
+	HDD
+	M.2
+	Servidor NAS
+Periféricos
+	Altavoces
+	Monitores
+	Monitor 4K
+	Teclados
+	Teclado inalámbrico
+	Ratón
+	Ratón inalámbrico
+	Impresoras
+	Micrófono
+	Sistema de sonido 5.1
+	Cascos
+	Cargadores
+	Alfombrilla
+Cables
+	HDMI
+	USB
+	Adaptadores
+	Adaptador Bluetooth
+	Cargadores
+Portátiles
+Gaming
+
+grupo 5: 
+refrigeracion:
+    disipadores
+    ventiladores
+monitores:
+    monitor 4k 
+alfombrillas
+usb
+almacenamiento:
+    ssd
+    hdd
+    m.2
+cargadores
+perifericos:
+    microfono
+    raton inalambrico
+    teclado inalambrico
+    altavoces
+    teclados
+    raton
+    cascos
+portatiles
+gaming
+impresoras
+servidor NAS
+adaptadores:
+    adaptador bluetooht
+componentes:
+    placa base
+    grafica
+    ram
+    fuente alimentacion
+    tarjeta sonido
+    tarjeta de red
+    cpu
+    caja
+    sistema de sonido 5.1
+    pasta termica
+cables:
+    hdmi
+SO

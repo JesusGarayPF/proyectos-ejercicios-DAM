@@ -1,0 +1,79 @@
+<script>
+    window.onload = function () {
+        crearTablero();
+    };
+
+    function crearTablero() {
+        const cuerpo = document.body;
+
+        function colorAleatorio() {
+            const letras = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letras[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function dimensionAleatoria() {
+            const minimo = 50;
+            const maximo = 100;
+            return Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
+        }
+
+        for (let fila = 0; fila < 8; fila++) {
+            for (let columna = 0; columna < 8; columna++) {
+                const celda = document.createElement('div');
+                const dimensionCelda = dimensionAleatoria();
+                celda.style.width = `${dimensionCelda}px`;
+                celda.style.height = `${dimensionCelda}px`;
+                celda.style.backgroundColor = colorAleatorio();
+                celda.style.border = '2px solid black';
+                celda.style.float = 'left';
+                celda.style.margin = '5px';
+                celda.style.cursor = 'pointer';
+                celda.style.transition = 'background-color 0.3s ease';
+                celda.innerHTML = `C${fila}${columna}`;
+
+                celda.addEventListener('mouseover', function () {
+                    celda.style.backgroundColor = 'tomato';
+                });
+
+                celda.addEventListener('mouseout', function () {
+                    celda.style.backgroundColor = colorAleatorio();
+                });
+
+                celda.addEventListener('click', function () {
+                    document.body.style.backgroundColor = colorAleatorio();
+                    if (fila === 7 && columna === 7) {
+                        borrarTablero();
+                    } else {
+                        celda.style.backgroundColor = '#FFFFFF';
+                        cambiarColores(celda);
+                    }
+                });
+
+                cuerpo.appendChild(celda);
+            }
+            const clearDiv = document.createElement('div');
+            clearDiv.style.clear = 'both';
+            cuerpo.appendChild(clearDiv);
+        }
+
+        function borrarTablero() {
+            const celdas = document.querySelectorAll('div');
+            celdas.forEach(celda => {
+                celda.innerHTML = '';
+            });
+        }
+
+        function cambiarColores(celdaClicada) {
+            const celdas = document.querySelectorAll('div');
+            celdas.forEach(celda => {
+                if (celda !== celdaClicada) {
+                    celda.style.backgroundColor = colorAleatorio();
+                }
+            });
+        }
+    }
+</script>

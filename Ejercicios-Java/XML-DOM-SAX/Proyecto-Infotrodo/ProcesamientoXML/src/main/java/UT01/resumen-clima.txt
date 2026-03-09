@@ -1,0 +1,15 @@
+Ciudad: madrid
+--------------------------------------------------
+T mínima: 12.67 | T máxima: 18.67 | T media: 15.67
+Humedad media: 75.00 | Presión media: 1014.67
+
+Ciudad: barcelona
+--------------------------------------------------
+T mínima: 12.67 | T máxima: 18.67 | T media: 15.67
+Humedad media: 75.00 | Presión media: 1014.67
+
+Ciudad: valencia
+--------------------------------------------------
+T mínima: 12.67 | T máxima: 18.67 | T media: 15.67
+Humedad media: 75.00 | Presión media: 1014.67
+

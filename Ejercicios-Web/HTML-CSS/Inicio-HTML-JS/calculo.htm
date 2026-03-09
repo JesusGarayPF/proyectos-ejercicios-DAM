@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body></body>
+    <script>
+        const alto = parseFloat(prompt("Introduce el alto:"));
+        const ancho = parseFloat(prompt("Introduce el ancho:"));
+        const fondo = parseFloat(prompt("Introduce el fondo:"));
+    
+        document.write("<h3>==== ENTRADA ====</h3>");
+        document.write(`<p>Alto = ${alto}</p>`);
+        document.write(`<p>Ancho = ${ancho}</p>`);
+        document.write(`<p>Fondo = ${fondo}</p>`);
+    
+        const superficie = 2 * (ancho * alto + alto * fondo + ancho * fondo);
+        const volumen = ancho * alto * fondo;
+    
+        const superficiePies = superficie * 3.28 * 3.28;
+        const volumenPies = volumen * 3.28 * 3.28 * 3.28;
+    
+        document.write("<h3>==== SALIDA ====</h3>");
+        document.write(`<p>Superficie = ${superficie.toFixed(2)} (${superficiePies.toFixed(2)} pies)</p>`);
+        document.write(`<p>Volumen = ${volumen.toFixed(2)} (${volumenPies.toFixed(2)} pies)</p>`);
+    </script>
+</html>

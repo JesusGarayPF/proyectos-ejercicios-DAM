@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejar Lista de Nodos</title>
+</head>
+<body>
+    <script>
+        const letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+        let contador = 0;
+        let panelBotones, panelDatos, panelNodos;
+        let ultimoElemento = "-";
+        let elementosCreados = 0;
+
+        function generarEstructura() {
+            const style = document.createElement("style");
+            style.innerHTML = `
+                body {
+                    font-family: Arial, sans-serif;
+                }
+                h2 {
+                    text-align: center;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                }
+                .contenedor-principal {
+                    display: flex;
+                    justify-content: center;
+                    gap: 20px;
+                    max-width: 900px;
+                    margin: auto;
+                }
+                .columna-izquierda, #panelDatos {
+                    width: 50%;
+                }
+                .columna-izquierda {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                #panelNodos {
+                    border: 1px solid #000;
+                    padding: 10px;
+                    min-height: 150px;
+                    background-color: #f9f9f9;
+                    display: flex;
+                    gap: 5px;
+                    flex-wrap: wrap;
+                }
+                #panelBotones {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                button, input[type="text"], input[type="number"] {
+                    padding: 5px;
+                    font-size: 14px;
+                    background-color: #f0f0f0;
+                    border: 1px solid #ccc;
+                    width: 100%;
+                }
+                .boton-con-input {
+                    display: flex;
+                    gap: 5px;
+                    width: 100%;
+                }
+                .boton-con-input button {
+                    width: 70%;
+                }
+                .boton-con-input input {
+                    width: 30%;
+                }
+                #panelDatos {
+                    border: 1px solid #000;
+                    padding: 10px;
+                    background-color: #f9f9f9;
+                }
+            `;
+            document.head.appendChild(style);
+
+            const encabezado = document.createElement("h2");
+            encabezado.id = "encabezado";
+            encabezado.innerHTML = `MANEJAR UNA LISTA DE NODOS`;
+            document.body.appendChild(encabezado);
+
+            const contenedorPrincipal = document.createElement("div");
+            contenedorPrincipal.className = "contenedor-principal";
+            document.body.appendChild(contenedorPrincipal);
+
+            const columnaIzquierda = document.createElement("div");
+            columnaIzquierda.className = "columna-izquierda";
+            contenedorPrincipal.appendChild(columnaIzquierda);
+
+            panelNodos = document.createElement("div");
+            panelNodos.id = "panelNodos";
+            columnaIzquierda.appendChild(panelNodos);
+
+            panelBotones = document.createElement("div");
+            panelBotones.id = "panelBotones";
+            columnaIzquierda.appendChild(panelBotones);
+
+            panelDatos = document.createElement("div");
+            panelDatos.id = "panelDatos";
+            panelDatos.innerHTML = `
+                <p>Último elemento creado: ${ultimoElemento}</p>
+                <p>Elementos creados: ${elementosCreados}</p>
+            `;
+            contenedorPrincipal.appendChild(panelDatos);
+        }
+
+        function crearBotones() {
+            const botonesConfig = [
+                { id: "añadirFinal", texto: "Añadir al final" },
+                { id: "añadirInicio", texto: "Añadir al inicio" }
+            ];
+
+            botonesConfig.forEach(({ id, texto }) => {
+                const boton = document.createElement("button");
+                boton.id = id;
+                boton.innerHTML = texto;
+                boton.style.width = "100%";
+                panelBotones.appendChild(boton);
+            });
+
+            const contenedorPosicion = document.createElement("div");
+            contenedorPosicion.className = "boton-con-input";
+            const añadirPosicion = document.createElement("button");
+            añadirPosicion.id = "añadirPosicion";
+            añadirPosicion.innerHTML = "Añadir delante posición";
+            contenedorPosicion.appendChild(añadirPosicion);
+            const inputPosicion = document.createElement("input");
+            inputPosicion.id = "posicionInput";
+            inputPosicion.type = "number";
+            inputPosicion.placeholder = "Posición";
+            contenedorPosicion.appendChild(inputPosicion);
+            panelBotones.appendChild(contenedorPosicion);
+
+            const botonesRestantes = [
+                { id: "cambiarTodosColores", texto: "Cambiar todos los colores" },
+                { id: "cambiarColorImpares", texto: "Cambiar color impares" }
+            ];
+
+            botonesRestantes.forEach(({ id, texto }) => {
+                const boton = document.createElement("button");
+                boton.id = id;
+                boton.innerHTML = texto;
+                boton.style.width = "100%";
+                panelBotones.appendChild(boton);
+            });
+
+            const contenedorColorEle = document.createElement("div");
+            contenedorColorEle.className = "boton-con-input";
+            const cambiarColorEle = document.createElement("button");
+            cambiarColorEle.id = "cambiarColorEle";
+            cambiarColorEle.innerHTML = "Cambiar color elemento";
+            contenedorColorEle.appendChild(cambiarColorEle);
+            const inputColorEle = document.createElement("input");
+            inputColorEle.id = "elementoInput";
+            inputColorEle.type = "text";
+            inputColorEle.placeholder = "Letra del elemento";
+            contenedorColorEle.appendChild(inputColorEle);
+            panelBotones.appendChild(contenedorColorEle);
+
+            const borrarPrimer = document.createElement("button");
+            borrarPrimer.id = "borrarPrimer";
+            borrarPrimer.innerHTML = "Borrar primer nodo";
+            borrarPrimer.style.width = "100%";
+            panelBotones.appendChild(borrarPrimer);
+        }
+
+        function crearNodo() {
+            if (panelNodos.children.length >= letras.length) {
+                alert("Se han alcanzado todas las letras disponibles. No se pueden agregar más nodos.");
+                return null;
+            }
+            const nodo = document.createElement("div");
+            nodo.className = "nodo";
+            nodo.innerHTML = letras.charAt(contador % letras.length);
+            nodo.style.backgroundColor = "rgb(255, 255, 255)";
+            nodo.style.color = "black";
+            nodo.style.border = "1px solid black";
+            nodo.style.padding = "5px";
+            nodo.style.textAlign = "center";
+            contador++;
+            return nodo;
+        }
+
+        function actualizarPanelDatos() {
+            panelDatos.children[0].textContent = `Último elemento creado: ${ultimoElemento}`;
+            panelDatos.children[1].textContent = `Elementos creados: ${elementosCreados}`;
+
+            while (panelDatos.children.length > 2) {
+                panelDatos.removeChild(panelDatos.lastChild);
+            }
+
+            Array.from(panelNodos.children).forEach(nodo => {
+                const nombre = nodo.textContent;
+                const colorRGB = window.getComputedStyle(nodo).backgroundColor;
+                const colorElemento = document.createElement("p");
+                colorElemento.className = "rgb";
+                colorElemento.innerHTML = `${nombre} - ${colorRGB}`;
+                panelDatos.appendChild(colorElemento);
+            });
+        }
+
+        function añadirFinal() {
+            const nodo = crearNodo();
+            if (nodo) {
+                panelNodos.appendChild(nodo);
+                ultimoElemento = nodo.textContent;
+                actualizarPanelDatos();
+                elementosCreados++;
+            }
+        }
+
+        function añadirInicio() {
+            const nodo = crearNodo();
+            if (nodo) {
+                panelNodos.insertBefore(nodo, panelNodos.firstChild);
+                ultimoElemento = nodo.textContent;
+                actualizarPanelDatos();
+                elementosCreados++;
+            }
+        }
+
+        function añadirPosicion() {
+            const posicion = parseInt(document.getElementById("posicionInput").value);
+            if (isNaN(posicion) || posicion < 0 || posicion > panelNodos.children.length) {
+                alert("Posición inválida");
+                return;
+            }
+            const nodo = crearNodo();
+            if (nodo) {
+                panelNodos.insertBefore(nodo, panelNodos.children[posicion]);
+                ultimoElemento = nodo.textContent;
+                actualizarPanelDatos();
+                elementosCreados++;
+            }
+        }
+
+        function cambiarTodosColores() {
+            Array.from(panelNodos.children).forEach(nodo => {
+                nodo.style.backgroundColor = generarColorRGB();
+            });
+            actualizarPanelDatos();
+        }
+
+        function cambiarColoresImpares() {
+            Array.from(panelNodos.children).forEach((nodo, index) => {
+                if (index % 2 !== 0) nodo.style.backgroundColor = generarColorRGB();
+            });
+            actualizarPanelDatos();
+        }
+
+        function cambiarColorEle() {
+            const letra = document.getElementById("elementoInput").value.toUpperCase();
+            const nodo = Array.from(panelNodos.children).find(nodo => nodo.textContent === letra);
+            if (nodo) {
+                nodo.style.backgroundColor = generarColorRGB();
+                actualizarPanelDatos();
+            } else {
+                alert(`No se encontró un nodo con la letra: ${letra}`);
+            }
+        }
+
+        function borrarPrimer() {
+            if (panelNodos.firstChild) {
+                panelNodos.removeChild(panelNodos.firstChild);
+                contador--;
+                elementosCreados--;
+            } else {
+                alert("No hay elementos que borrar");
+            }
+            actualizarPanelDatos();
+        }
+
+        function generarColorRGB() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        generarEstructura();
+        crearBotones();
+
+        document.getElementById("añadirFinal").addEventListener("click", añadirFinal);
+        document.getElementById("añadirInicio").addEventListener("click", añadirInicio);
+        document.getElementById("añadirPosicion").addEventListener("click", añadirPosicion);
+        document.getElementById("cambiarTodosColores").addEventListener("click", cambiarTodosColores);
+        document.getElementById("cambiarColorImpares").addEventListener("click", cambiarColoresImpares);
+        document.getElementById("cambiarColorEle").addEventListener("click", cambiarColorEle);
+        document.getElementById("borrarPrimer").addEventListener("click", borrarPrimer);
+    </script>
+</body>
+</html>

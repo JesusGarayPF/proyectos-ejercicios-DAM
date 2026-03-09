@@ -1,0 +1,116 @@
+<odoo>
+    <!-- Vista y accion para clientes -->
+    <record id="view_gym_cliente_list" model="ir.ui.view">
+        <field name="name">gym.cliente.list</field>
+        <field name="model">gym.cliente</field>
+        <field name="arch" type="xml">
+            <tree string="Clientes">
+                <field name="nombre" string="Nombre"/>
+                <field name="apellido" string="Apellido"/>
+                <field name="email" string="Email"/>
+                <field name="membresia_id" string="Membresía"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_gym_cliente_form" model="ir.ui.view">
+        <field name="name">gym.cliente.form</field>
+        <field name="model">gym.cliente</field>
+        <field name="arch" type="xml">
+            <form string="Clientes">
+                <sheet>
+                    <group>
+                        <field name="nombre" string="Nombre"/>
+                        <field name="apellido" string="Apellido"/>
+                        <field name="email" string="Email"/>
+                        <field name="telefono" string="Teléfono"/>
+                        <field name="fecha_nac" string="Fecha de Nacimiento"/>
+                        <field name="membresia_id" string="Membresía"/>
+                        <field name="actividades_ids" widget="many2many_tags" string="Actividades Inscritas"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_gym_cliente" model="ir.actions.act_window">
+        <field name="name">Clientes</field>
+        <field name="res_model">gym.cliente</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Vista y acción para Membresías -->
+    <record id="view_gym_membresia_list" model="ir.ui.view">
+        <field name="name">gym.membresia.list</field>
+        <field name="model">gym.membresia</field>
+        <field name="arch" type="xml">
+            <tree string="Membresías">
+                <field name="nombre" string="Nombre"/>
+                <field name="precio" string="Precio"/>
+                <field name="duracion_meses" string="Duración (Meses)"/>
+                <field name="activo" string="Activo"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_gym_membresia_form" model="ir.ui.view">
+        <field name="name">gym.membresia.form</field>
+        <field name="model">gym.membresia</field>
+        <field name="arch" type="xml">
+            <form string="Membresías">
+                <sheet>
+                    <group>
+                        <field name="nombre" string="Nombre"/>
+                        <field name="precio" string="Precio"/>
+                        <field name="duracion_meses" string="Duración (Meses)"/>
+                        <field name="activo" string="Activo"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_gym_membresia" model="ir.actions.act_window">
+        <field name="name">Membresías</field>
+        <field name="res_model">gym.membresia</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Vista y acción para Actividades -->
+    <record id="view_gym_actividad_list" model="ir.ui.view">
+        <field name="name">gym.actividad.list</field>
+        <field name="model">gym.actividad</field>
+        <field name="arch" type="xml">
+            <tree string="Actividades">
+                <field name="nombre" string="Nombre"/>
+                <field name="dia_semana" string="Día de la Semana"/>
+                <field name="hora_inicio" string="Hora de Inicio"/>
+                <field name="duracion_mins" string="Duración (Minutos)"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_gym_actividad_form" model="ir.ui.view">
+        <field name="name">gym.actividad.form</field>
+        <field name="model">gym.actividad</field>
+        <field name="arch" type="xml">
+            <form string="Actividades">
+                <sheet>
+                    <group>
+                        <field name="nombre" string="Nombre"/>
+                        <field name="dia_semana" string="Día de la Semana"/>
+                        <field name="hora_inicio" string="Hora de Inicio"/>
+                        <field name="duracion_mins" string="Duración (Minutos)"/>
+                        <field name="clientes_ids" widget="many2many_tags" string="Clientes Inscritos"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_gym_actividad" model="ir.actions.act_window">
+        <field name="name">Actividades</field>
+        <field name="res_model">gym.actividad</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

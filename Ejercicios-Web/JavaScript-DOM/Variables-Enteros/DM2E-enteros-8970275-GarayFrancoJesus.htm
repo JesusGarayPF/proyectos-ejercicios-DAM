@@ -1,0 +1,66 @@
+<script>
+    function generarEstructura() {
+        const pre = document.createElement('pre');
+        pre.id = "salida"; 
+        document.body.appendChild(pre);
+    }
+
+    function generarTextarea(id) {
+        const textarea = document.createElement('textarea'); 
+        textarea.id = `textarea_${id}`;
+        textarea.innerHTML = "";
+        textarea.style.padding = "8px";
+        textarea.cols = 4;
+        textarea.rows = 1;
+        textarea.maxLength = textarea.cols; 
+        textarea.style.resize = "none"; 
+        textarea.addEventListener("input", chequeos); 
+        document.body.appendChild(textarea);
+    }
+
+    function generarTextareas(){
+        for (let i = 0; i < generarAleatorio(2, 20); i++) {
+            generarTextarea(i); 
+        }
+    }
+
+    function generarAleatorio(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min; 
+    }
+
+    function chequeos(){
+        const textareas = document.querySelectorAll('textarea'); 
+        let vacios = 0;
+        let noEnteros = 0;
+        let numeros = [];
+
+        textareas.forEach(textarea => {
+            const valor = textarea.value;
+            if (valor.trim() === "") {
+                vacios++; 
+            } else if (!Number.isInteger(Number(valor))) {
+                noEnteros++; 
+            } else {
+                numeros.push(parseInt(valor)); 
+            }
+        });
+
+        const pre = document.getElementById("salida");
+
+        if (vacios === textareas.length) {
+            pre.textContent = 'Rellene con enteros'; 
+        } else if (vacios > 0) {
+            pre.textContent = `Faltan ${vacios} por rellenar. Complete.`; 
+        } else if (noEnteros > 0) {
+            pre.textContent = 'Alguna entrada no es un entero.'; 
+        } else {
+            numeros.sort((a, b) => a - b); 
+            pre.textContent = `Orden ascendente: ${numeros.join(", ")}\nOrden descendente: ${numeros.reverse().join(", ")}`; 
+        }
+    }
+
+    window.onload = function() {
+        generarEstructura(); 
+        generarTextareas(); 
+    };
+</script>

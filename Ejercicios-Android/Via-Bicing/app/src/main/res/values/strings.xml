@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ViaBicing</string>
+    <string name="hayRed">Hay conectividad de red</string>
+    <string name="noHayRed">No hay conectividad de red</string>
+</resources>

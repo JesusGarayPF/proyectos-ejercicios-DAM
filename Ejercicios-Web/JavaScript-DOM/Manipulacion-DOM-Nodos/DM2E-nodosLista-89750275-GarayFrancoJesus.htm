@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejar Lista de Nodos</title>
+    <style>
+        #panelBotones {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+        let contador = 0;
+        let panelBotones, panelDatos, panelNodos;
+        let ultimoElemento = "-";
+        let elementosCreados = 0;
+
+        function generarEstructura() {
+            const encabezado = document.createElement("h2");
+            encabezado.id = "encabezado";
+            encabezado.innerHTML = `MANEJAR UNA LISTA DE NODOS`;
+            document.body.appendChild(encabezado);
+
+            panelNodos = document.createElement("div");
+            panelNodos.id = "panelNodos";
+            document.body.appendChild(panelNodos);
+
+            panelBotones = document.createElement("div");
+            panelBotones.id = "panelBotones";
+            document.body.appendChild(panelBotones);
+
+            panelDatos = document.createElement("div");
+            panelDatos.id = "panelDatos";
+            panelDatos.innerHTML = `
+                <p>Último elemento creado: ${ultimoElemento}</p>
+                <p>Elementos creados: ${elementosCreados}</p>
+            `;
+            document.body.appendChild(panelDatos);
+        }
+
+        function crearBotones() {
+            const añadirFinal = document.createElement("button");
+            añadirFinal.id = "añadirFinal";
+            añadirFinal.innerHTML = "Añadir al final";
+            panelBotones.appendChild(añadirFinal);
+
+            const añadirInicio = document.createElement("button");
+            añadirInicio.id = "añadirInicio";
+            añadirInicio.innerHTML = "Añadir al inicio";
+            panelBotones.appendChild(añadirInicio);
+
+            const añadirPosicion = document.createElement("button");
+            añadirPosicion.id = "añadirPosicion";
+            añadirPosicion.innerHTML = "Añadir delante posición";
+            panelBotones.appendChild(añadirPosicion);
+
+            const inputPosicion = document.createElement("input");
+            inputPosicion.id = "posicionInput";
+            inputPosicion.type = "number";
+            inputPosicion.placeholder = "Posición";
+            panelBotones.appendChild(inputPosicion);
+
+            const cambiarTodosColores = document.createElement("button");
+            cambiarTodosColores.id = "cambiarTodosColores";
+            cambiarTodosColores.innerHTML = "Cambiar todos los colores";
+            panelBotones.appendChild(cambiarTodosColores);
+
+            const cambiarColorImpares = document.createElement("button");
+            cambiarColorImpares.id = "cambiarColorImpares";
+            cambiarColorImpares.innerHTML = "Cambiar color impares";
+            panelBotones.appendChild(cambiarColorImpares);
+
+            const cambiarColorEle = document.createElement("button");
+            cambiarColorEle.id = "cambiarColorEle";
+            cambiarColorEle.innerHTML = "Cambiar color de elemento";
+            panelBotones.appendChild(cambiarColorEle);
+
+            const inputColorEle = document.createElement("input");
+            inputColorEle.id = "elementoInput";
+            inputColorEle.type = "text";
+            inputColorEle.placeholder = "Letra del elemento";
+            panelBotones.appendChild(inputColorEle);
+
+            const borrarPrimer = document.createElement("button");
+            borrarPrimer.id = "borrarPrimer";
+            borrarPrimer.innerHTML = "Borrar primer nodo";
+            panelBotones.appendChild(borrarPrimer);
+        }
+
+        function crearNodo() {
+            const nodo = document.createElement("div");
+            nodo.className = "nodo";
+            nodo.innerHTML = letras.charAt(contador % letras.length);
+            nodo.style.backgroundColor = "rgb(255, 255, 255)";
+            nodo.style.color = "black";
+            nodo.style.border = "1px solid black";
+            contador++;
+            return nodo;
+        }
+
+        function generarColorRGB() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        function actualizarPanelDatos() {
+            panelDatos.children[0].textContent = `Último elemento creado: ${ultimoElemento}`;
+            panelDatos.children[1].textContent = `Elementos creados: ${elementosCreados}`;
+
+            while (panelDatos.children.length > 2) {
+                panelDatos.removeChild(panelDatos.lastChild);
+            }
+
+            const arrayListaNodos = Array.from(panelNodos.children);
+            arrayListaNodos.forEach(nodo => {
+                const nombre = nodo.textContent;
+                const colorRGB = window.getComputedStyle(nodo).backgroundColor;
+                const colorElemento = document.createElement("p");
+                colorElemento.className = "rgb";
+                colorElemento.innerHTML = `${nombre} - ${colorRGB}`;
+                panelDatos.appendChild(colorElemento);
+            });
+        }
+
+        function añadirFinal() {
+            const nodo = crearNodo();
+            panelNodos.appendChild(nodo);
+            ultimoElemento = nodo.textContent;
+            actualizarPanelDatos();
+            elementosCreados++;
+        }
+
+        function añadirInicio() {
+            const nodo = crearNodo();
+            panelNodos.insertBefore(nodo, panelNodos.firstChild);
+            ultimoElemento = nodo.textContent;
+            actualizarPanelDatos();
+            elementosCreados++;
+        }
+
+        function añadirPosicion() {
+            const posicion = parseInt(document.getElementById("posicionInput").value);
+            if (!isNaN(posicion) && posicion >= 0 && posicion <= panelNodos.children.length) {
+                const nodo = crearNodo();
+                panelNodos.insertBefore(nodo, panelNodos.children[posicion]);
+                ultimoElemento = nodo.textContent;
+                actualizarPanelDatos();
+                elementosCreados++;
+            } else {
+                alert("Posición inválida");
+            }
+        }
+
+        function cambiarTodosColores() {
+            Array.from(panelNodos.children).forEach(nodo => {
+                nodo.style.backgroundColor = generarColorRGB();
+            });
+            actualizarPanelDatos();
+        }
+
+        function cambiarColoresImpares() {
+            Array.from(panelNodos.children).forEach((nodo, index) => {
+                if (index % 2 !== 0) nodo.style.backgroundColor = generarColorRGB();
+            });
+            actualizarPanelDatos();
+        }
+
+        function cambiarColorEle() {
+            const letra = document.getElementById("elementoInput").value.toUpperCase();
+            const nodo = Array.from(panelNodos.children).find(nodo => nodo.textContent === letra);
+            if (nodo) {
+                nodo.style.backgroundColor = generarColorRGB();
+                actualizarPanelDatos();
+            } else {
+                alert(`No se encontró un nodo con la letra: ${letra}`);
+            }
+        }
+
+        function borrarPrimer() {
+            if (panelNodos.firstChild) {
+                panelNodos.removeChild(panelNodos.firstChild);
+                elementosCreados--;
+            } else {
+                alert("No hay elementos que borrar");
+            }
+            actualizarPanelDatos();
+        }
+
+        generarEstructura();
+        crearBotones();
+
+        document.getElementById("añadirFinal").addEventListener("click", añadirFinal);
+        document.getElementById("añadirInicio").addEventListener("click", añadirInicio);
+        document.getElementById("añadirPosicion").addEventListener("click", añadirPosicion);
+        document.getElementById("cambiarTodosColores").addEventListener("click", cambiarTodosColores);
+        document.getElementById("cambiarColorImpares").addEventListener("click", cambiarColoresImpares);
+        document.getElementById("cambiarColorEle").addEventListener("click", cambiarColorEle);
+        document.getElementById("borrarPrimer").addEventListener("click", borrarPrimer);
+    </script>
+</body>
+</html>

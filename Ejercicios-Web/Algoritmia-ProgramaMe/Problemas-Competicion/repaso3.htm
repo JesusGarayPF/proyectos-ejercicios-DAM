@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>ejercicio-B-nacional-2016</title>
+ 
+</head>
+ 
+<body>
+<script type="text/javascript">
+	
+var entrada = [
+'1,1,1',
+'1,1',
+'1,2,2',
+'1,1',
+'1,2,2',
+'1,2',
+'1,10,4',
+'2,1,4',
+'1,10,1',
+'2,1,2',
+'1,1000,450',
+'2,400,500',
+'0,0,0'
+];
+
+document.write("<b>entrada</b><br/>");
+var i=0;
+do{
+	d1=entrada[i];
+	d1=d1.replace(/,/g,' '); // expresion regular reemplaza todo
+	document.write(d1+"<br/>");
+	i++;
+} while(d1!='0 0 0') // marca fin de fichero	
+
+document.write("<br/><b>salida</b><br/>");
+var i=0;d1=entrada[i];i++;d2=entrada[i];	
+while(d1!='0,0,0'){
+	//partida		
+	var tmp=d1.split(',');
+	var ini=tmp[0],fin=tmp[1],oculto=tmp[2];
+	var tmp=d2.split(',');
+	var np=tmp[0];
+	var mayor=fin,menor=ini;
+	var acerto=0;
+	for (j=1;j<tmp.length;j++){
+		var numero=tmp[j];
+		if (numero<oculto){menor=numero}else{mayor=numero}
+		if (mayor-menor<=1){acerto=1;break}
+	}
+	console.log(ini,' ',fin,' ',oculto,' ',tmp,' ',acerto);
+	var txt=['NO LO SABE','LO SABE']
+	document.write(txt[acerto]+' (#'+d1+'#'+d2+'#)<br/>');
+	i++;d1=entrada[i];i++;d2=entrada[i]; // aumento del puntero
+}	
+
+</script>	
+
+</body>
+</html>

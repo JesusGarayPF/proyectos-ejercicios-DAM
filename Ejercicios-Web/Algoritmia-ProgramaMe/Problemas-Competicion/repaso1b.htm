@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>ejercicio-C-madrid-2011</title>
+
+</head>
+ 
+<body>
+
+<input type="file" id="file-input" />
+
+<script type="text/javascript">
+
+var datosEntrada = []; // global 
+
+function leerArchivo(e) {
+	var archivo = e.target.files[0];
+	if (!archivo) {	return;	}
+	var lector = new FileReader(); 		
+	lector.onload = function(e) { 		
+	var contenido = e.target.result;
+	leerResultado(lector.result);	
+	};
+	lector.readAsText(archivo);
+}
+
+function leerResultado(a){	
+	var entradaTexto = []; 
+	entradaTexto=a.split('\r\n');
+	console.log('ARRAY=',entradaTexto);
+	for (i = 0; i < entradaTexto.length; i++) { 
+		var linea=entradaTexto[i].split(',');
+		console.log(linea);
+		for (j = 0; j < linea.length; j++) { 
+			datosEntrada.push(linea[j]);
+			console.log(i,j,linea[j]);
+		}   
+	}		
+	procesar();	
+}
+
+document.getElementById('file-input').addEventListener('change', leerArchivo, false);
+
+function procesar(){
+
+console.log(datosEntrada);
+
+var d1,d2,i=0;
+var temporal=[0,0,0,0,0];	
+var tipos=['DESAYUNO','COMIDA','MERIENDA','CENAS','COPAS'];
+
+document.write('<b>Entrada</b><br/>');
+do{
+	d1=datosEntrada[i];
+	d2=datosEntrada[i+1];
+	document.write(d1+" "+d2+"<br/>");
+	i+=2;
+} while(d1!='E') // marca de fin de fichero	
+
+document.write('<b>Salida</b><br/>');
+var i=0; 
+do{ // bucle hasta fin de archivo E 0
+	d1=datosEntrada[i];
+	d2=datosEntrada[i+1];
+	if ( d1!='N' && d1!='E' ){	//  no es sin del dia almacena ventas por categorias
+		if (d1=='D'){j=0;}
+		if (d1=='A'){j=1;}
+		if (d1=='M'){j=2;}
+		if (d1=='I'){j=3;}
+		if (d1=='C'){j=4;}
+		temporal[j]=temporal[j]+parseFloat(d2); // almacena decimales
+	}
+	else{ // fin del dia encontro N 0							
+		var maximo=-1,minimo=999,suma=0,media=0,elementos=0,media1=0,suma1=0,elementos1=0,vmin,vmax,cmin=0,cmax=0; // inicialización
+		for (k=0;k<temporal.length;k++){ // calculos
+			console.log(k+" --"+temporal[k]);
+			//if (temporal[k]!=0){ // no admitidas entradas con ventas cero
+				if (temporal[k]==minimo){cmin++;} // contador de minimos , cmin>0 minimo repetido
+				if (temporal[k]==maximo){cmax++;} // contador de maximos , cmax>0 minimo repetido
+				if (temporal[k]<minimo){minimo=temporal[k];vmin=k;cmin=0}   // nuevo mínimo
+				if (temporal[k]>maximo){maximo=temporal[k];vmax=k;cmax=0}	// nuevo máximo
+				if (temporal[k]!=0 && k==4){ // comidas sin ventas cero
+					elementos1++;
+					suma1+=temporal[k];
+				}
+				if (temporal[k]!=0){ // solo ventas con beneficio
+					suma+=temporal[k];
+					elementos++;
+				} 
+			//}		
+		}
+		if (suma1==0){media1=0}else{media1=suma1/elementos1;} // calculos comidas
+		if (suma==0){media=0}else{media=suma/elementos;} // calculos ventas  		
+
+		// resultado del cálculo
+		console.log("minimo:"+vmin+" maximo:"+vmax+" elementos:"+elementos+" sumaComidas:"+suma1+" mediaComidas:"+media1.toFixed(2)+" sumaVentas:"+suma+" mediaVentas:"+media.toFixed(2)+" empateMaximo:"+cmax+' empateMinimo:'+cmin);
+		
+		// imprimir resultados y terminar los calculos
+		var cat=tipos[vmax];
+		if (cmax>0){cat='EMPATE';}	// hay mas de un maximo								
+		document.write(cat+"#");
+		
+		cat=tipos[vmin];
+		if (cmin>0){cat='EMPATE';}	// hay mas de un minimo							
+		document.write(cat+"#");
+		
+		if (media>media1){cat='SI';}else{cat='NO';}
+		document.write(cat+"<br/>");
+		
+		var temporal = [0,0,0,0,0]; // reset para el proximo dia
+		j=0;
+	}		
+	i+=2; // indice para recorrer la entrada		
+} while(d1!='E') // fin de fich
+
+}
+</script>	
+
+</body>
+</html>

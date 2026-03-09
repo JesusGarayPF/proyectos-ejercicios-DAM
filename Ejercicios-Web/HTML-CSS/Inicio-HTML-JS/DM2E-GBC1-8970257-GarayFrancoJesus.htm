@@ -1,0 +1,15 @@
+<script>
+    function generarValores(){
+        const alto = Math.floor(Math.random()*10) + 1;
+        const ancho = Math.floor(Math.random()*10) + 1;
+        const fondo = Math.floor(Math.random()*10) + 1;
+
+        const superficie = alto * ancho;
+        const volumen = alto * ancho * fondo;
+        const volumenPies = Math.floor(volumen * 3.281);
+        return `alto=${alto} ancho=${ancho} fondo ${fondo} superficie=${superficie} volumen=${volumen} volumen en pies=${volumenPies}<br>`;
+    }
+    for (let i = 0; i < 10; i++) {
+        document.write(generarValores());
+    }
+</script>

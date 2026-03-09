@@ -1,0 +1,96 @@
+<script>
+    /** Hacer un menu por niveles descendentes. Solo js. Partimos de una lista de datos:
+-Tenemos una lista de localizaciones de diferentes nivel: continente, pais, ciudad, indicados en el primer campo por la letra (A,B,C)
+-Estas localizaciones estan enlazadas por el tercer campo.
+* Presentamos el menu:
+-Presentar la lista de datos.
+-En el primer nivel los continentes.
+-Al hacer un click sobre el continente presentar los paises de ese continente.
+-Asi sucesivamente.
+-Presentar una lista de migas para informar en que nivel estamos
+Ampliacion:
+- Añadir mas datos
+- Añadir mas niveles 
+- Hacer la la lista de migas sea clicable y actualizar el menu
+- Usar una array de objetos y metodos de array
+* Datos:
+var sitios=[
+'A1#america#00',
+'A2#europa#00',
+'A3#africa#00',
+'A4#asia#00',
+'B1#canada#A1',
+'B2#eeuu#A1',
+'B3#brasil#A1',
+'B4#argentina#A1',
+'B5#urugay#A1',
+'B6#chile#A1',
+'B7#francia#A2',
+'B8#italia#A2',
+'C1#toronto#B1',
+'C2#quebec#B1',
+'C3#lyon#B7',
+'C4#paris#B7',
+'C5#bayona#B7',
+'C6#nantes#B7',
+'C7#toulouse#B7'
+];
+tips: div, [], push, for of, for in, split, addEventListener, :hover, className='clase1 clase2', innerHTML=''
+Enviar htm y exponer.*/
+    var sitios = [
+        'A1#america#00',
+        'A2#europa#00',
+        'A3#africa#00',
+        'A4#asia#00',
+        'B1#canada#A1',
+        'B2#eeuu#A1',
+        'B3#brasil#A1',
+        'B4#argentina#A1',
+        'B5#urugay#A1',
+        'B6#chile#A1',
+        'B7#francia#A2',
+        'B8#italia#A2',
+        'C1#toronto#B1',
+        'C2#quebec#B1',
+        'C3#lyon#B7',
+        'C4#paris#B7',
+        'C5#bayona#B7',
+        'C6#nantes#B7',
+        'C7#toulouse#B7'
+    ];
+
+    function generarEstructura() {
+        const head = document.createElement("head");
+        const body = document.createElement("body");
+        document.appendChild(head);
+        document.appendChild(body);
+    }
+    function generarDivs() {
+
+        for (let i = 0; i < sitios.length; i++) {
+            const div = document.createElement("div");
+            div.innerHTML = sitios[sitios.length-1];
+        }
+    }
+    function generarEstilos() {
+        const estilos = document.createElement("style");
+        estilos.innerHTML = `
+            <style>
+                .div {
+                    width: 64px;
+                    height: 64px;
+                    margin: 4px;
+                    padding: 0;
+                    border: 2px;
+                    background-color: #FFD700;
+                    color: black;
+                    text-align: center;
+                    display: inline-block;
+                }
+            <style>
+        `
+        document.head.appendChild(estilos);
+    }
+    generarEstructura();
+    generarDivs();
+</script>

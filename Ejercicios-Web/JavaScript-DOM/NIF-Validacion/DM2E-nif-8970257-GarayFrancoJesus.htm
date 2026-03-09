@@ -1,0 +1,56 @@
+<script>
+    const letrasNIF = "TRWAGMYFPDXBNJZSQVHLCKE";
+
+    function verificarNIF() {
+        let numeroNIF;
+        let letraNIF;
+        let error = null;
+
+        try {
+            numeroNIF = prompt("Introduce el número del NIF (8 dígitos):");
+            letraNIF = prompt("Introduce la letra del NIF (1 letra):").toUpperCase();
+
+            if (!/^\d{8}$/.test(numeroNIF)) {
+                throw new Error("El número del NIF debe contener exactamente 8 dígitos.");
+            }
+            if (!/^[A-Za-z]$/.test(letraNIF)) {
+                throw new Error("La letra del NIF debe ser una sola letra.");
+            }
+            if (letraNIF == 'i'.toUpperCase()){
+                throw new Error("La letra no puede ser I");
+            }
+            if (letraNIF == 'o'.toUpperCase()){
+                throw new Error("La letra no puede ser O");
+            }
+
+            document.write(`<p>Número ingresado: ${numeroNIF}</p>`);
+            document.write(`<p>Letra ingresada: ${letraNIF}</p>`);
+
+            function calcularLetra(numeroNIF) {
+                let modulo23 = numeroNIF % 23;
+                return letrasNIF.charAt(modulo23);
+            }
+
+            let letraCalculada = calcularLetra(numeroNIF);
+            if (letraCalculada !== letraNIF) {
+                throw new Error("Letra introducida incorrecta según el cálculo mod23.");
+            }
+
+            document.write(`<p>La letra calculada es correcta: ${letraCalculada}</p>`);
+
+        } catch (err) {
+            error = err;
+            document.write(`<p>Error encontrado: ${err.message}</p>`);
+        } finally {
+            let mensaje = "";
+            if (error) {
+                mensaje = "<p>Hubo un error en los datos ingresados.</p>";
+            } else {
+                mensaje = "<p>Los datos ingresados son válidos.</p>";
+            }
+            document.write(mensaje);
+        }
+    }
+
+    verificarNIF();
+</script>
